@@ -8,6 +8,7 @@ import java.util.Objects;
  */
 public final class Product {
     
+    private String productId;
     private String productName;
     private double unitPrice;
     private String imageURL;
@@ -18,7 +19,16 @@ public final class Product {
     ////////////////////////////////////////
     // ---------- CONSTRUCTORS ---------- //
     ////////////////////////////////////////
-    
+
+    public Product(String productId, String productName, double unitPrice, String imageURL, String discriptionShort, String discriptionLong) {
+        this.productId = productId;
+        this.productName = productName;
+        this.unitPrice = unitPrice;
+        this.imageURL = imageURL;
+        this.discriptionShort = discriptionShort;
+        this.discriptionLong = discriptionLong;
+    }
+
     public Product(String productName, double unitPrice, String imageURL, String discriptionShort, String discriptionLong) {
         setProductName(productName);
         setUnitPrice(unitPrice);
@@ -35,6 +45,11 @@ public final class Product {
     ////////////////////////////////////////
     // --------- SETTER METHODS --------- //
     ////////////////////////////////////////
+
+    public void setProductId(String productId) {
+        if(imageURL == null || imageURL.isEmpty()) throw new IllegalArgumentException("Product Id May Not Be Null Or Empty");
+        this.productId = productId;
+    }
     
     public void setProductName(String productName) {
         if(productName == null || productName.isEmpty()) throw new IllegalArgumentException("Product Name May Not Be Null Or Empty");
@@ -64,6 +79,10 @@ public final class Product {
     ////////////////////////////////////////
     // --------- GETTER METHODS --------- //
     ////////////////////////////////////////
+
+    public String getProductId() {
+        return productId;
+    }
     
     public String getProductName() {
         return productName;
@@ -97,8 +116,7 @@ public final class Product {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 61 * hash + Objects.hashCode(this.productName);
-        hash = 61 * hash + Objects.hashCode(this.imageURL);
+        hash = 73 * hash + Objects.hashCode(this.productId);
         return hash;
     }
 
@@ -114,11 +132,8 @@ public final class Product {
             return false;
         }
         final Product other = (Product) obj;
-        if (!Objects.equals(this.productName, other.productName)) {
-            return false;
-        }
-        return Objects.equals(this.imageURL, other.imageURL);
+        return Objects.equals(this.productId, other.productId);
     }
-
+    
     
 }
