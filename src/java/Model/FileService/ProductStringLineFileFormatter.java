@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Model.FileService;
 
 import Model.FileService.CruptedObjectFileFormatException;
 import Model.FileService.FileFormatter;
+import Model.Product;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;

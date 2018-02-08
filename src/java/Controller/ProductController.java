@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Model.FileReaderProductService;
+import Model.FileService.FileReaderProductService;
 import Model.Product;
 import Model.ProductService;
 import java.io.File;
