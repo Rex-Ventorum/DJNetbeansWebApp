@@ -6,7 +6,7 @@ import java.util.Objects;
  *
  * @author Brandon
  */
-public final class Product {
+public final class Product{
     
     private String productId;
     private String productName;
@@ -19,7 +19,7 @@ public final class Product {
     ////////////////////////////////////////
     // ---------- CONSTRUCTORS ---------- //
     ////////////////////////////////////////
-
+    
     public Product(String productId, String productName, double unitPrice, String imageURL, String discriptionShort, String discriptionLong) {
         this.productId = productId;
         this.productName = productName;
@@ -40,8 +40,7 @@ public final class Product {
     ////////////////////////////////////////
     // ------ INTERACTABLE METHODS ------ //
     ////////////////////////////////////////
-    
-    
+        
     ////////////////////////////////////////
     // --------- SETTER METHODS --------- //
     ////////////////////////////////////////
@@ -133,7 +132,6 @@ public final class Product {
         }
         final Product other = (Product) obj;
         return Objects.equals(this.productId, other.productId);
-    }
-    
+    }    
     
 }
