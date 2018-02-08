@@ -1,3 +1,10 @@
+<%-- 
+    Document   : shopping-cart
+    Created on : Feb 7, 2018, 9:49:28 PM
+    Author     : Brandon
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>

@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : Feb 7, 2018, 9:45:02 PM
+    Author     : Brandon
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>

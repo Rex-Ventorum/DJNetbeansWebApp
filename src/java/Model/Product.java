@@ -12,8 +12,8 @@ public final class Product{
     private String productName;
     private double unitPrice;
     private String imageURL;
-    private String discriptionShort;
-    private String discriptionLong;
+    private String descriptionShort;
+    private String descriptionLong;
     
     
     ////////////////////////////////////////
@@ -25,16 +25,16 @@ public final class Product{
         this.productName = productName;
         this.unitPrice = unitPrice;
         this.imageURL = imageURL;
-        this.discriptionShort = discriptionShort;
-        this.discriptionLong = discriptionLong;
+        this.descriptionShort = discriptionShort;
+        this.descriptionLong = discriptionLong;
     }
 
     public Product(String productName, double unitPrice, String imageURL, String discriptionShort, String discriptionLong) {
         setProductName(productName);
         setUnitPrice(unitPrice);
         setImageURL(imageURL);
-        setDiscriptionShort(discriptionShort);
-        setDiscriptionLong(discriptionLong);
+        setDescriptionShort(discriptionShort);
+        setDescriptionLong(discriptionLong);
     }
 
     ////////////////////////////////////////
@@ -65,14 +65,14 @@ public final class Product{
         this.imageURL = imageURL;
     }
 
-    public void setDiscriptionShort(String discriptionShort) {
+    public void setDescriptionShort(String discriptionShort) {
         if(discriptionShort == null) throw new IllegalArgumentException("Short Discription May Not Be Null");
-        this.discriptionShort = discriptionShort;
+        this.descriptionShort = discriptionShort;
     }
 
-    public void setDiscriptionLong(String discriptionLong) {
+    public void setDescriptionLong(String discriptionLong) {
         if(discriptionLong == null || discriptionLong.isEmpty()) throw new IllegalArgumentException("Long Discription May Not Be Null Or Empty");
-        this.discriptionLong = discriptionLong;
+        this.descriptionLong = discriptionLong;
     }
     
     ////////////////////////////////////////
@@ -95,12 +95,12 @@ public final class Product{
         return imageURL;
     }
 
-    public String getDiscriptionShort() {
-        return discriptionShort;
+    public String getDescriptionShort() {
+        return descriptionShort;
     }
 
-    public String getDiscriptionLong() {
-        return discriptionLong;
+    public String getDescriptionLong() {
+        return descriptionLong;
     }
     
     ////////////////////////////////////////

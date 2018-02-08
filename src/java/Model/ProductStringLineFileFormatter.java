@@ -23,8 +23,8 @@ public final class ProductStringLineFileFormatter implements FileFormatter<Produ
     private static final String PRODUCT_NAME_KEY = "Product Name";
     private static final String UNIT_PRICE_KEY = "Unit Price";
     private static final String IMAGE_URL_KEY = "Image URL";
-    private static final String DESCRIPT_SHORT_KEY = "Short Discription";
-    private static final String DESCRIP_lONG_KEY = "Long Discription";
+    private static final String DESCRIPT_SHORT_KEY = "Short Description";
+    private static final String DESCRIP_lONG_KEY = "Long Description";
 
     ////////////////////////////////////////
     // ------ INTERACTABLE METHODS ------ //
@@ -36,8 +36,8 @@ public final class ProductStringLineFileFormatter implements FileFormatter<Produ
         dataLines.add(PRODUCT_NAME_KEY + KEY_VALUE_SEPERATOR + unformatedObject.getProductName());
         dataLines.add(UNIT_PRICE_KEY + KEY_VALUE_SEPERATOR + unformatedObject.getUnitPrice());
         dataLines.add(IMAGE_URL_KEY + KEY_VALUE_SEPERATOR + unformatedObject.getImageURL());
-        dataLines.add(DESCRIPT_SHORT_KEY + KEY_VALUE_SEPERATOR + unformatedObject.getDiscriptionShort());
-        dataLines.add(DESCRIP_lONG_KEY + KEY_VALUE_SEPERATOR + unformatedObject.getDiscriptionLong());
+        dataLines.add(DESCRIPT_SHORT_KEY + KEY_VALUE_SEPERATOR + unformatedObject.getDescriptionShort());
+        dataLines.add(DESCRIP_lONG_KEY + KEY_VALUE_SEPERATOR + unformatedObject.getDescriptionLong());
         return dataLines;
     }
 
@@ -56,13 +56,14 @@ public final class ProductStringLineFileFormatter implements FileFormatter<Produ
         
         try {
             String productId = tempMap.get(PRODUCT_ID_KEY);
-            String productName = tempMap.get(PRODUCT_ID_KEY);
-            double unitPrice = Double.parseDouble(tempMap.get(PRODUCT_ID_KEY));
-            String imageURL = tempMap.get(PRODUCT_ID_KEY) ;
-            String discriptionShort = tempMap.get(PRODUCT_ID_KEY);
-            String discriptionLong = tempMap.get(PRODUCT_ID_KEY);
+            String productName = tempMap.get(PRODUCT_NAME_KEY);
+            double unitPrice = Double.parseDouble(tempMap.get(UNIT_PRICE_KEY));
+            String imageURL = tempMap.get(IMAGE_URL_KEY) ;
+            String discriptionShort = tempMap.get(DESCRIPT_SHORT_KEY);
+            String discriptionLong = tempMap.get(DESCRIP_lONG_KEY);
             product = new Product(productId,productName,unitPrice,imageURL,discriptionShort,discriptionLong);
         } catch (NumberFormatException e) {
+            product = product;
             throw new CruptedObjectFileFormatException();
         }
         return product;

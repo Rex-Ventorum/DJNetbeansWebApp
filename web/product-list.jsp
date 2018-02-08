@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<%-- 
+    Document   : product-list
+    Created on : Feb 7, 2018, 9:48:10 PM
+    Author     : Brandon
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
         <title>Shopstuff Web Portal</title>
