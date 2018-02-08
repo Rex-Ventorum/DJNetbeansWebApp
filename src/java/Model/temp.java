@@ -13,8 +13,8 @@ public class temp {
   
     public static void main(String[] args) throws IOException {
         File file = new File("web" + File.separatorChar + "WEB-INF" + File.separatorChar + "WebProducts.txt");
-        StringLineFileService service = new StringLineFileService(file, new ProductStringLineFileFormatter());
-        List<Product> list = service.readFromFile();
+        FileReaderProductService service = new FileReaderProductService(file);
+        List<Product> list = service.getAllProducts();
         for(Product p : list){
             System.out.println(p.getProductId() + ": "  + p.getProductName());
         }

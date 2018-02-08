@@ -27,7 +27,7 @@
                 <li><a href="products.html">Products</a></li>
                 <li><a href="#">Shopping Cart</a></li>
                 <li>
-                    <form class="navbar-form navbar-right" method="post" action="FirstServlet" role="search">
+                    <form class="navbar-form navbar-right" method="post" action="ProductController" role="search">
                         <div class="form-group">
                             <input type="text" class="form-control" name="searchParam" placeholder="Search">
                             <button type="submit" class="btn btn-default" value="POST">Search</button>
@@ -38,7 +38,7 @@
         </nav>
 
         <div class="body-contnet">
-            
+
             <form>
                 <div class="form-group">
                     <label class="sr-only" for="exampleInputAmount">Street Address</label>
@@ -70,7 +70,7 @@
                 </div>
                 <input class="btn" type="submit" value="Complete Prurchase">
             </form>
-            
+
             <ul class="list-group">
                 <li class="list-group-item">
                     <span class="badge">x1</span>
@@ -122,7 +122,7 @@
                     <input type="button" value="Remove">
                 </li>
             </ul>
-            
+
         </div>
 
         <footer class="footer">

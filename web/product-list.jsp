@@ -25,7 +25,7 @@
                 <li><a href="#">Products</a></li>
                 <li><a href="shopping-cart.html">Shopping Cart</a></li>
                 <li>
-                    <form class="navbar-form navbar-right" method="post" action="FirstServlet" role="search">
+                    <form class="navbar-form navbar-right" method="post" action="ProductController" role="search">
                         <div class="form-group">
                             <input type="text" class="form-control" name="searchParam" placeholder="Search">
                             <button type="submit" class="btn btn-default" value="POST">Search</button>
@@ -90,7 +90,7 @@
                     </li>
                 </ul>
             </nav>
-            
+
         </div>
 
         <footer class="footer">
