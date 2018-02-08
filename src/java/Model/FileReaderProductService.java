@@ -42,7 +42,13 @@ public final class FileReaderProductService implements ProductService{
 
     @Override
     public List<Product> searchProducts(String searchParam) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Product> productList = new LinkedList<>();
+        for(Product product : productMap.values()){
+            if(product.getProductName().toLowerCase().contains(searchParam.toLowerCase())){
+                productList.add(product);
+            }
+        }//end of loop
+        return productList;
     }
 
     @Override

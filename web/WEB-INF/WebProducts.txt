@@ -8,28 +8,28 @@ Long Description :: Over 100 various potions and poisons for the every day warlo
 Product Id :: I001
 Product Name :: Pink Winged ButterFly
 Unit Price :: 2
-Image URL :: ButterFly_1.png
+Image URL :: Butterfly_1.png
 Short Description ::  
 Long Description :: A pink winged butterfly commonly used for love potions.
 ----- NEW RECORD -----
 Product Id :: I002
 Product Name :: Orange Monarch
 Unit Price :: 1.5
-Image URL :: ButterFly_2.png
+Image URL :: Butterfly_2.png
 Short Description ::  
 Long Description :: A generic orange monarch butterfly.
 ----- NEW RECORD -----
-Product Id :: I002
+Product Id :: I003
 Product Name :: Blue Winged ButterFly
 Unit Price :: 2
-Image URL :: ButterFly_3.png
+Image URL :: Butterfly_3.png
 Short Description ::  
 Long Description :: A blue winged butterfly commonly used for flight and ability augmentation potions.
 ----- NEW RECORD -----
 Product Id :: I004
 Product Name :: Fairy Winged Butterfly
 Unit Price :: 3.5
-Image URL :: ButterFly_4.png
+Image URL :: Butterfly_4.png
 Short Description ::  
 Long Description :: Rare fairy winged butterfly used for advanced potions. Warning: Use by inexperanced warlocks may cause unpredictable affects. 
 ----- NEW RECORD -----
@@ -71,7 +71,7 @@ Long Description :: Transforms user into frog for 30 minutes. May cause partial 
 Product Id :: P104
 Product Name :: Elixir Of Orange Soda
 Unit Price :: 4.99
-Image URL :: Elixir_Cyan.png
+Image URL :: Elixir_Orange.png
 Short Description :: Orange Soda
 Long Description :: This is simply orange soda in an elixir vile. Warlocks need drinks too!
 ----- NEW RECORD -----
@@ -131,26 +131,19 @@ Image URL :: Eye_Black.png
 Short Description ::  
 Long Description :: A Single Eye of Jaguar.
 ----- NEW RECORD -----
-Product Id :: Y002
+Product Id :: Y003
 Product Name :: Eye of Elephant
 Unit Price :: 3.5
 Image URL :: Eye_Blue.png
 Short Description ::  
 Long Description :: A Single Eye of Elephant.
 ----- NEW RECORD -----
-Product Id :: Y003
+Product Id :: Y004
 Product Name :: Eye of Frog
 Unit Price :: 2
 Image URL :: Eye_Green.png
 Short Description ::  
 Long Description :: A Single Eye of Frog.
------ NEW RECORD -----
-Product Id :: Y004
-Product Name :: Eye of Newt
-Unit Price :: 2
-Image URL :: Eye_Orange.png
-Short Description ::  
-Long Description :: A Single Eye of Newt.
 ----- NEW RECORD -----
 Product Id :: Y005
 Product Name :: Eye of Newt
@@ -159,21 +152,21 @@ Image URL :: Eye_Orange.png
 Short Description ::  
 Long Description :: A Single Eye of Newt.
 ----- NEW RECORD -----
-Product Id :: Y006
+Product Id :: Y007
 Product Name :: Eye of Bat
 Unit Price :: 2
 Image URL :: Eye_Purple.png
 Short Description ::  
 Long Description :: A Single Eye of Bat.
 ----- NEW RECORD -----
-Product Id :: Y006
+Product Id :: Y008
 Product Name :: Eye of Lion
 Unit Price :: 2
 Image URL :: Eye_Red.png
 Short Description ::  
 Long Description :: A Single Eye of Lion.
 ----- NEW RECORD -----
-Product Id :: Y006
+Product Id :: Y009
 Product Name :: Eye of Tiger
 Unit Price :: 2
 Image URL :: Eye_Yellow.png
@@ -230,14 +223,14 @@ Short Description :: Also known as Mind Gem
 Long Description :: A soothing gem that causes the holder to have calming thoughts. Great for antidepressants alternatives.
 ----- NEW RECORD -----
 Product Id :: G517
-Product Name :: Gem of Angel
+Product Name :: Gem of The Angel
 Unit Price :: 7.99
 Image URL :: Gem_8.png
 Short Description :: Also known Angelic Stone
 Long Description :: Can be used as substitute for "Essence of Angel" or "Angelic Grace". Store in well lighted area as effect will fade in darkness.  
 ----- NEW RECORD -----
 Product Id :: G517
-Product Name :: Gem of Demon
+Product Name :: Gem of The Demon
 Unit Price :: 7.99
 Image URL :: Gem_8.png
 Short Description :: Also known Demonic Stone

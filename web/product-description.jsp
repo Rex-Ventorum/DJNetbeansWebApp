@@ -4,6 +4,7 @@
     Author     : Brandon
 --%>
 
+<%@page import="Model.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -41,17 +42,15 @@
 
         <div class="body-contnet">
             <div class="media">
+                <% Product product = (Product) request.getAttribute("product"); %>
                 <div class="media-left media-top">
-                    <img class="media-object" src="images/unknownItem.png" height="300" width="300" alt="Image Picture">
+                    <img class="media-object" src="Images/<%= product.getImageURL() %>" height="300" width="300" alt="Picture of "<%= product.getProductName()%>>
                 </div>
                 <div class="media-body">
-                    <h2 class="media-heading">Item Heading</h2>
-                    <h4>Price: amount <br> In Stock: no</h4>
-                    <p> This is the space used to describe the object. Here is where that text would go.
-                        Right now this is just a filler paragraph but soon it will be replaced with actual info
-                        about a specific product. I Repeat.This is the space used to describe the object. Here is where that text would go.
-                        Right now this is just a filler paragraph but soon it will be replaced with actual info
-                        about a specific product.</p>
+                    <h2 class="media-heading"><%= product.getProductName()%></h2>
+                    <h4> <%= product.getDescriptionShort() %> </h4>
+                    <h4>Price: $<%= product.getUnitPrice() %> <br> In Stock: Yes</h4>
+                    <p> <%= product.getDescriptionLong() %> </p>
                 </div>
             </div>
 

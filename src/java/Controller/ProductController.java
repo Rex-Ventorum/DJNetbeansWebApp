@@ -49,19 +49,22 @@ public class ProductController extends HttpServlet {
         RequestDispatcher dispatcher = null;
 
         String id = request.getParameter("id");
-        String search = request.getParameter("search");
+        String search = request.getParameter("searchParam");
         if (id != null) {
             Product product = productService.findProduct(id);
             request.setAttribute("product", product);
             dispatcher = request.getRequestDispatcher("/product-description.jsp");
         } else if (search != null) {
-            List<Product> foundProducts = productService.searchProducts(search);
-            request.setAttribute("productList", foundProducts);
+            List<Product> productList;
+            if(search.toLowerCase().equals("all")){
+                productList = productService.getAllProducts();
+            }else{
+                productList = productService.searchProducts(search);
+            }
+            request.setAttribute("productList", productList);
             dispatcher = request.getRequestDispatcher("/product-list.jsp");
         } else {
-            List<Product> allProducts = productService.getAllProducts();
-            request.setAttribute("productList", allProducts);
-            dispatcher = request.getRequestDispatcher("/product-list.jsp");
+            dispatcher = request.getRequestDispatcher("/index.jsp");
         }
         dispatcher.forward(request, response);
         

@@ -4,6 +4,8 @@
     Author     : Brandon
 --%>
 
+<%@page import="Model.Product"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
@@ -37,39 +39,27 @@
 
         <div class="body-contnet">
             <h2> All Shopstuff Products </h2>
-            <div class="media">
-                <a href="product-description.html" class="list-group-item">
-                    <div class="media-left media-middle">
-                        <img class="media-object" src="images/unknownItem.png" height="125" width="125" alt="Image Picture">
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Item heading</h4>
-                        Price: amount <br> In Stock: no
-                    </div>
-                </a>
-            </div>
-            <div class="media">
-                <a href="product-description.html" class="list-group-item">
-                    <div class="media-left media-middle">
-                        <img class="media-object" src="images/unknownItem.png" height="125" width="125" alt="Image Picture">
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Item heading</h4>
-                        Price: amount <br> In Stock: no
-                    </div>
-                </a>
-            </div>
-            <div class="media">
-                <a href="product-description.html" class="list-group-item">
-                    <div class="media-left media-middle">
-                        <img class="media-object" src="images/unknownItem.png" height="125" width="125" alt="Image Picture">
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Item heading</h4>
-                        <p>Price: amount <br> In Stock: no</p>
-                    </div>
-                </a>
-            </div>
+
+            <!-- START OF PRODUCT LIST -->            
+            <div class="productList">
+                <%
+                    List<Product> productList = (List<Product>) request.getAttribute("productList");
+                    for (Product product : productList) {
+                %>
+                <div class="media">
+                    <a href="?id=<%= product.getProductId()%>" class="list-group-item">
+                        <div class="media-left media-middle">
+                            <img class="media-object" src="Images/<%= product.getImageURL() %>" height="125" width="125" alt="Picture of "<%= product.getProductName()%>>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading"><%= product.getProductName()%></h4>
+                            Price: $<%= product.getUnitPrice() %> <br> In Stock: yes
+                        </div>
+                    </a>
+                </div>
+                <% } %>
+            </div> 
+            <!-- END OF PRODUCT LIST -->
 
             <nav aria-label="Page navigation">
                 <ul class="pagination">
@@ -90,7 +80,6 @@
                     </li>
                 </ul>
             </nav>
-
         </div>
 
         <footer class="footer">
