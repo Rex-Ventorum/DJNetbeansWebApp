@@ -19,7 +19,7 @@ nav{
 }
 
 @media (min-width: 768px) {
-    nav ul{
+    .navbar ul{
         width:100%;
         margin:0 auto;
         padding:0;

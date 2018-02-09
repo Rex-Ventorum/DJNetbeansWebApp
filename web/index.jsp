@@ -33,11 +33,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="nav-content">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="shopping-cart.html">Shopping Cart</a></li>
                     <li>
-                        <form class="navbar-form" method="post" action="ProductController" role="search">
+                        <form class="navbar-form center-block" method="post" action="ProductController" role="search">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="searchParam" placeholder="Search">
                                 <span class="input-group-btn">
