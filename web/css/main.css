@@ -15,6 +15,7 @@ body{
 }
 
 .navbar{
+    text-align: center;
     color: rgba(255,255,255,1);
     background: -webkit-linear-gradient(-90deg, rgba(210,244,146,1) 0, rgba(124,188,10,1) 100%);
     background: -moz-linear-gradient(180deg, rgba(210,244,146,1) 0, rgba(124,188,10,1) 100%);
@@ -23,7 +24,7 @@ body{
 }
 
 nav{
-    text-align: center;
+    
 }
 
 
