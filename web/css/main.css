@@ -14,8 +14,27 @@ body{
     background-repeat: no-repeat;
 }
 
-.navbar{
+nav{
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    nav ul{
+        width:100%;
+        margin:0 auto;
+        padding:0;
+        text-align:center;
+    }
+
+    .nav li { 
+        display:inline-block;
+        width:25%;
+        margin:0;
+        padding:0;
+    }
+}
+
+.navbar{
     color: rgba(255,255,255,1);
     background: -webkit-linear-gradient(-90deg, rgba(210,244,146,1) 0, rgba(124,188,10,1) 100%);
     background: -moz-linear-gradient(180deg, rgba(210,244,146,1) 0, rgba(124,188,10,1) 100%);
@@ -23,10 +42,18 @@ body{
     z-index:9;
 }
 
-nav{
-    
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
 }
 
+nav form{
+    padding: 10px;
+    width: 75%;
+    text-align: center;
+    align-content: center;
+}
 
 .footer{
     text-align: right;
