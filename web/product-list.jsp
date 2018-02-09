@@ -16,7 +16,7 @@
         <!-- Bootstrap core and CSS Links -->
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
         <link href="css/main.css" rel="stylesheet"/>
-        <link href="css/products.css" rel="stylesheet"/>
+        <link href="css/product-list.css" rel="stylesheet"/>
     </head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -41,7 +41,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" name="searchParam" placeholder="Search">
                                 <span class="input-group-btn">
-                                      <button type="submit" class="btn btn-default" value="POST">Search</button>
+                                    <button type="submit" class="btn btn-default" value="POST">Search</button>
                                 </span>
                             </div>
                         </form>
@@ -61,15 +61,15 @@
                 <div class="media">
                     <a href="?id=<%= product.getProductId()%>" class="list-group-item">
                         <div class="media-left media-middle">
-                            <img class="media-object" src="Images/<%= product.getImageURL() %>" height="125" width="125" alt="Picture of "<%= product.getProductName()%>>
+                            <img class="media-object" src="Images/<%= product.getImageURL()%>" height="125" width="125" alt="Picture of "<%= product.getProductName()%>>
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading"><%= product.getProductName()%></h4>
-                            Price: $<%= product.getUnitPrice() %> <br> In Stock: yes
+                            Price: $<%= product.getUnitPrice()%> <br> In Stock: yes
                         </div>
                     </a>
                 </div>
-                <% } %>
+                <% }%>
             </div> 
             <!-- END OF PRODUCT LIST -->
 
