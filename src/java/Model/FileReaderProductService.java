@@ -1,10 +1,8 @@
-package Model.FileService;
+package Model;
 
-import Model.FileService.ProductStringLineFileFormatter;
 import Model.FileService.FileService;
+import Model.FileService.ProductStringLineFileFormatter;
 import Model.FileService.StringLineFileService;
-import Model.Product;
-import Model.ProductService;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;

@@ -236,3 +236,115 @@ Image URL :: Gem_9.png
 Short Description :: Also known Demonic Stone
 Long Description :: Can be used as substitute for "Essence of Demon" or "Hell's Wrath". Store in dark area as effect will fade in light.  
 ----- NEW RECORD -----
+Product Id :: L700
+Product Name :: Rust Leaf
+Unit Price :: .75
+Image URL :: Leaf_1.png
+Short Description :: This is a common leaf
+Long Description :: In reality this is just an ordinary red leaf. For reasons unknown many potion books ask for a non-existent "rust leaf" when any red leaf will do. 
+----- NEW RECORD -----
+Product Id :: L701
+Product Name :: Autumn Leaf
+Unit Price :: .75
+Image URL :: Leaf_2.png
+Short Description :: Also known as "Leaf of Fall"
+Long Description :: This is a common leaf preserved with an enchantment at the peek of turning.  
+----- NEW RECORD -----
+Product Id :: L702
+Product Name :: Blood Leaf
+Unit Price :: .75
+Image URL :: Leaf_3.png
+Short Description :: Also known as "Hate Leaf"
+Long Description :: A leaf from the rare Blood Tree. The leaf itself contains ventricle like that of a human with actual blood running threw them.   
+----- NEW RECORD -----
+Product Id :: L703
+Product Name :: Pointer Leaf
+Unit Price :: .75
+Image URL :: Leaf_4.png
+Short Description :: Also known as "Magnetic Leaf"
+Long Description :: A Magical leaf that always points EAST. Why not NORTH you ask? We don't know either.    
+----- NEW RECORD -----
+Product Id :: L704
+Product Name :: Money Leaf
+Unit Price :: 2.75
+Image URL :: Leaf_5.png
+Short Description :: Who says money does not grow on trees?
+Long Description :: A Magical leaf that can transform into any form of human currency under $50.  
+----- NEW RECORD -----
+Product Id :: L704
+Product Name :: Rainbow Leaf
+Unit Price :: 2.75
+Image URL :: Leaf_6.png
+Short Description :: Also known as "Leprechaun Leaf"
+Long Description :: A shimmering leaf of many colors. Grows only in the presence of Leprechaun groves. 
+----- NEW RECORD -----
+Product Id :: M230
+Product Name :: Death Moth
+Unit Price :: 2
+Image URL :: Moth_1.png
+Short Description :: Also known as "Life Moth"
+Long Description :: Like schrodinger's cat this moth is in an equal state of life and death. 
+----- NEW RECORD -----
+Product Id :: M231
+Product Name :: Painted Moth
+Unit Price :: 3.25
+Image URL :: Moth_2.png
+Short Description :: Hand painted by art gnomes. 
+Long Description :: These moths are first painted by gnomes and enchanted to life to help tend and bless the gardens they protect. 
+----- NEW RECORD -----
+Product Id :: M232
+Product Name :: Bumble Moth
+Unit Price :: 2
+Image URL :: Moth_3.png
+Short Description :: Half Bee / Half Moth 
+Long Description :: Created by a mad scientist simply because he could. This moth serves no purpose in the environment but for some reason has strong potion qualities. 
+----- NEW RECORD -----
+Product Id :: M233
+Product Name :: Common Moth
+Unit Price :: 1.5
+Image URL :: Moth_4.png
+Short Description :: A Common House Moth
+Long Description :: Sometimes you just need a common house moth and they too hard or too annoying to catch on your own. Don't worry we got you!
+----- NEW RECORD -----
+Product Id :: S001
+Product Name :: She Shell Sea Shell
+Unit Price :: 1
+Image URL :: Shell_1.png
+Short Description :: By The Sea Shore
+Long Description :: The shells she sells are surely seashells.So if she sells shells on the seashore, I'm sure she sells seashore shells.
+----- NEW RECORD -----
+Product Id :: S002
+Product Name :: Mermaid Shell
+Unit Price :: 1
+Image URL :: Shell_2.png
+Short Description :: Hand selected by Pacific Ocean mermaids
+Long Description :: A Shell commonly used by mermaids to cover their bodies when in presence of company. 
+----- NEW RECORD -----
+Product Id :: S003
+Product Name :: Common Shell
+Unit Price :: 1
+Image URL :: Shell_3.png
+Short Description :: A Generic Sea Shell
+Long Description :: Sometimes you just need a generic sea shell and they are either too hard to to annoying to collect on your own!
+----- NEW RECORD -----
+Product Id :: S004
+Product Name :: Cell Shell
+Unit Price :: 3.5
+Image URL :: Shell_4.png
+Short Description :: Crafted by mermaids of the Atlantic ocean
+Long Description :: An enchanted cell shell used by the mermaids to communicate long distance. Cell enchantment is intact however Standard messaging rates may still apply.
+----- NEW RECORD -----
+Product Id :: S005
+Product Name :: Goo Shell
+Unit Price :: 1.75
+Image URL :: Shell_5.png
+Short Description :: A soft sticky shell
+Long Description :: Created from an unknown creature this shell is actually gooye to the touch and used in many paste based potions.
+----- NEW RECORD -----
+Product Id :: S100
+Product Name :: Assorted Shell Collection
+Unit Price :: 19.99
+Image URL :: Shell_6.png
+Short Description :: A Collection of common potion shells.
+Long Description :: Comes with 25 various shells collected by mermaids across the world. The shells included are random but guaranteed to contain some from of magical quality.
+----- NEW RECORD -----
