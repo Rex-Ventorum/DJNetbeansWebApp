@@ -229,10 +229,10 @@ Image URL :: Gem_8.png
 Short Description :: Also known Angelic Stone
 Long Description :: Can be used as substitute for "Essence of Angel" or "Angelic Grace". Store in well lighted area as effect will fade in darkness.  
 ----- NEW RECORD -----
-Product Id :: G517
+Product Id :: G518
 Product Name :: Gem of The Demon
 Unit Price :: 7.99
-Image URL :: Gem_8.png
+Image URL :: Gem_9.png
 Short Description :: Also known Demonic Stone
 Long Description :: Can be used as substitute for "Essence of Demon" or "Hell's Wrath". Store in dark area as effect will fade in light.  
 ----- NEW RECORD -----

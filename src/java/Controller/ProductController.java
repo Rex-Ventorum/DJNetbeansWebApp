@@ -54,17 +54,16 @@ public class ProductController extends HttpServlet {
             Product product = productService.findProduct(id);
             request.setAttribute("product", product);
             dispatcher = request.getRequestDispatcher("/product-description.jsp");
-        } else if (search != null) {
-            List<Product> productList;
-            if(search.toLowerCase().equals("all")){
-                productList = productService.getAllProducts();
-            }else{
-                productList = productService.searchProducts(search);
-            }
+        } else if (search != null && !search.isEmpty()) {
+            List<Product> productList = productService.searchProducts(search);
+            request.setAttribute("listHeader", "Products Containing: \"" + search + "\"");
             request.setAttribute("productList", productList);
             dispatcher = request.getRequestDispatcher("/product-list.jsp");
         } else {
-            dispatcher = request.getRequestDispatcher("/index.jsp");
+            List<Product> productList = productService.getAllProducts();
+            request.setAttribute("listHeader", "All Products and Ingrediants");
+            request.setAttribute("productList", productList);
+            dispatcher = request.getRequestDispatcher("/product-list.jsp");
         }
         dispatcher.forward(request, response);
         
