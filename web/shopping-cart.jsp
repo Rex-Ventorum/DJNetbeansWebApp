@@ -35,7 +35,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="index.jsp">Home</a></li>
                     <li><a href="ProductController">Products</a></li>
-                    <li class="active"><a href="shopping-cart.jsp">Shopping Cart</a></li>
+                    <li class="current"><a href="javascript:;">Shopping Cart</a></li>
                     <li>
                         <form class="navbar-form center-block" method="post" action="ProductController" role="search">
                             <div class="input-group">

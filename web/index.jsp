@@ -33,7 +33,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="nav-content">
                 <ul class="nav navbar-nav">
-                    <li class = "active"><a href="#">Home</a></li>
+                    <li class = "current"><a href="javascript:;">Home</a></li>
                     <li><a href="ProductController">Products</a></li>
                     <li><a href="shopping-cart.jsp">Shopping Cart</a></li>
                     <li>

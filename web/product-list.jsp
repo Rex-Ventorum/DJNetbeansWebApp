@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="nav-content">
                 <ul class="nav navbar-nav">
                     <li><a href="index.jsp">Home</a></li>
-                    <li class = "active"><a href="ProductController">All Products</a></li>
+                    <li class = "current"><a href="ProductController">Products</a></li>
                     <li><a href="shopping-cart.jsp">Shopping Cart</a></li>
                     <li>
                         <form class="navbar-form center-block" method="post" action="ProductController" role="search">
