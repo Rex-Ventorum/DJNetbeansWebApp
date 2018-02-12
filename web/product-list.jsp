@@ -15,6 +15,7 @@
 
         <!-- Bootstrap core and CSS Links -->
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/animate.css" rel="styleSheet"/>
         <link href="css/main.css" rel="stylesheet"/>
         <link href="css/product-list.css" rel="stylesheet"/>
     </head>
@@ -50,26 +51,37 @@
         </nav>
 
         <div class="body-contnet">
-            <h2> All Shopstuff Products </h2>
+            <h2></h2>
 
             <!-- START OF PRODUCT LIST -->            
-            <div class="productList">
-                <%
-                    List<Product> productList = (List<Product>) request.getAttribute("productList");
-                    for (Product product : productList) {
-                %>
-                <div class="media">
-                    <a href="?id=<%= product.getProductId()%>" class="list-group-item">
-                        <div class="media-left media-middle">
-                            <img class="media-object" src="Images/<%= product.getImageURL()%>" height="125" width="125" alt="Picture of "<%= product.getProductName()%>>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading"><%= product.getProductName()%></h4>
-                            Price: $<%= product.getUnitPrice()%> <br> In Stock: yes
-                        </div>
-                    </a>
+            <div class="productList container-fluid">
+                <div class ="row">
+                    <%
+                        List<Product> productList = (List<Product>) request.getAttribute("productList");
+                        for (int i = 0; i < productList.size(); i++) {
+                            Product product = productList.get(i);
+                            if ((i % 4) == 0 && i != 0) {
+                                //Start new row every 4 products
+                    %></div><div class="row"><%
+                            }
+                    %>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="media">
+                            <a href="?id=<%= product.getProductId()%>" class="list-group-item">
+                                <div class="media-left media-middle">
+                                    <img class="media-object" src="Images/<%= product.getImageURL()%>" height="125" width="125" alt="Picture of "<%= product.getProductName()%>>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><%= product.getProductName()%></h4>
+                                    Price: $<%= product.getUnitPrice()%> <br> In Stock: yes
+                                </div>
+                            </a>
+                        </div> 
+                    </div>
+                    <%
+                    }//end of for loop
+                    %>
                 </div>
-                <% }%>
             </div> 
             <!-- END OF PRODUCT LIST -->
 
@@ -104,5 +116,18 @@
         <!-- Should Stay At Bottom and In Body Tag -->
         <script src  ="js/jquery.min.js"></script> 
         <script src  ="js/bootstrap.min.js"></script>
+        
+        <script>
+            var delay = 0;
+            var delayInc = .08;
+            $(function(){               
+               $('.media').each(function(){
+                    $(this).addClass('animated zoomIn');
+                    $(this).css('-moz-animation-delay', delay +'s');
+                    delay = delay + delayInc;
+               });
+            });
+        </script>
+        
     </body>
 </html>
