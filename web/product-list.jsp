@@ -119,7 +119,7 @@
         
         <script>
             var delay = 0;
-            var delayInc = .08;
+            var delayInc = .05;
             $(function(){               
                $('.media').each(function(){
                     $(this).addClass('animated zoomIn');
