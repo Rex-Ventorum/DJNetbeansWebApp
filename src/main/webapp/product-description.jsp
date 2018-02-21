@@ -6,6 +6,8 @@
 
 <%@page import="Model.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -54,15 +56,14 @@
 
         <div class="body-contnet">
             <div class="media">
-                <% Product product = (Product) request.getAttribute("product"); %>
                 <div class="media-left media-top">
-                    <img class="media-object" src="Images/<%= product.getImageURL() %>" height="300" width="300" alt="Picture of "<%= product.getProductName()%>>
+                    <img class="media-object" src="Images/<c:out value="${product.imageURL}"/>" height="300" width="300" alt="Picture of "<c:out value="${product.productName}"/>>
                 </div>
                 <div class="media-body">
-                    <h2 class="media-heading"><%= product.getProductName()%></h2>
-                    <h4> <%= product.getDescriptionShort() %> </h4>
-                    <h4>Price: $<%= product.getUnitPrice() %> <br> In Stock: Yes</h4>
-                    <p> <%= product.getDescriptionLong() %> </p>
+                    <h2 class="media-heading"><c:out value="${product.productName}"/></h2>
+                    <h4> <c:out value="${product.descriptionShort}"/> </h4>
+                    <h4>Price: $<c:out value="${product.unitPrice}"/> <br> In Stock: Yes</h4>
+                    <p> <c:out value="${product.descriptionLong}"/> </p>
                 </div>
             </div>
 
