@@ -7,6 +7,8 @@
 <%@page import="Model.Product"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <html>
     <head>
         <title>Shopstuff Web Portal</title>
@@ -51,37 +53,33 @@
         </nav>
 
         <div class="body-contnet">
-            <h2><%= request.getAttribute("listHeader") %></h2>
+            <h2><c:out value="${listHeader}"/></h2>
 
             <!-- START OF PRODUCT LIST -->            
             <div class="productList container-fluid">
                 <div class ="row">
-                    <%
-                        List<Product> productList = (List<Product>) request.getAttribute("productList");
-                        for (int i = 0; i < productList.size(); i++) {
-                            Product product = productList.get(i);
-                            if ((i % 4) == 0 && i != 0) {
-                                //Start new row every 4 products
-                    %></div><div class="row"><%
-                            }
-                    %>
+                    <c:forEach var="product" items="${productList}" varStatus="counter">
+                        <c:if test="${(counter.index mod 4) == 0 && counter.index != 1}">
+                        </div><div class="row">
+                        </c:if>
+                            
                     <div class="col-md-3 col-sm-12">
                         <div class="media">
-                            <a href="?id=<%= product.getProductId()%>" class="list-group-item">
+                            <a href="?id=<c:out value="${product.productId}"/>" class="list-group-item">
                                 <div class="media-left media-middle">
-                                    <img class="media-object" src="Images/<%= product.getImageURL()%>" height="125" width="125" alt="Picture of "<%= product.getProductName()%>>
+                                    <img class="media-object" src="Images/<c:out value="${product.imageURL}"/>" 
+                                         height="125" width="125" alt="Picture of <c:out value="${product.productName}"/>">
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading"><%= product.getProductName()%></h4>
-                                    Price: $<%= product.getUnitPrice()%> <br> In Stock: yes
+                                    <h4 class="media-heading"><c:out value="${product.productName}"/></h4>
+                                    Price: $<c:out value="${product.unitPrice}"/> <br> In Stock: yes
                                 </div>
                             </a>
                         </div> 
                     </div>
-                    <%
-                    }//end of for loop
-                    %>
+                    </c:forEach>
                 </div>
+                 
             </div> 
             <!-- END OF PRODUCT LIST -->
 
@@ -124,6 +122,7 @@
                $('.media').each(function(){
                     $(this).addClass('animated zoomIn');
                     $(this).css('-moz-animation-delay', delay +'s');
+                    $(this).css('-webkit-animation-delay', delay +'s');
                     delay = delay + delayInc;
                });
             });
