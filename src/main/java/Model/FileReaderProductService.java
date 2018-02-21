@@ -1,5 +1,6 @@
 package Model;
 
+import Model.Pojos.Product;
 import Model.FileService.FileService;
 import Model.FileService.ProductStringLineFileFormatter;
 import Model.FileService.StringLineFileService;

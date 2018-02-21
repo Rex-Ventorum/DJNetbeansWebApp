@@ -7,7 +7,7 @@ package Model.FileService;
 
 import Model.FileService.CruptedObjectFileFormatException;
 import Model.FileService.FileFormatter;
-import Model.Product;
+import Model.Pojos.Product;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;

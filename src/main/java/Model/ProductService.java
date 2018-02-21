@@ -1,5 +1,6 @@
 package Model;
 
+import Model.Pojos.Product;
 import java.util.List;
 
 /**

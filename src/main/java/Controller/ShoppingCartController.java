@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Model.Product;
+import Model.Pojos.Product;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;

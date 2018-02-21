@@ -6,7 +6,7 @@
 package Controller;
 
 import Model.FileReaderProductService;
-import Model.Product;
+import Model.Pojos.Product;
 import Model.ProductService;
 import java.io.File;
 import java.io.IOException;
