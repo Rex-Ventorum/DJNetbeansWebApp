@@ -6,6 +6,7 @@
 
 package Model.Pojos;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -19,6 +20,10 @@ public final class ShoppingCart {
     ////////////////////////////////////////
     // ---------- CONSTRUCTORS ---------- //
     ////////////////////////////////////////
+    
+    public ShoppingCart(){
+        itemList = new LinkedList();
+    }
     
     ////////////////////////////////////////
     // ------ INTERACTABLE METHODS ------ //
@@ -62,6 +67,16 @@ public final class ShoppingCart {
         }
     }
     
+    public boolean containsProduct(Product product){
+        if(product == null) return false;
+        else return containsProduct(product.getProductId());
+    }
+    
+    public boolean containsProduct(String productId){
+        if(productId == null || productId.isEmpty()) return false;
+        else return getCartItemFor(productId)!= null;
+    }
+    
     ////////////////////////////////////////
     // --------- SETTER METHODS --------- //
     ////////////////////////////////////////
@@ -75,11 +90,27 @@ public final class ShoppingCart {
     // --------- GETTER METHODS --------- //
     ////////////////////////////////////////
     
+    public CartItem getCartItemFor(Product product){
+        if(product == null) return null;
+        else return getCartItemFor(product.getProductId());
+    }
+    
+    public CartItem getCartItemFor(String productId){
+        CartItem foundItem = null;
+        for(CartItem cartItem : itemList){
+            if(cartItem.idMatches(productId)){
+                foundItem = cartItem;
+                break;
+            }
+        }//end of loop
+        return foundItem;
+    }
+    
     public List<CartItem> getItemList() {
         return itemList;
     }
     
-    public double getCartTotal(){
+    public double getCartTotalCost(){
         double total = 0;
         for(CartItem cartItem : itemList){
             total += cartItem.getTotalCost();

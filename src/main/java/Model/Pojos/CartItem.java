@@ -30,6 +30,10 @@ public final class CartItem {
     // ------ INTERACTABLE METHODS ------ //
     ////////////////////////////////////////
     
+    public boolean idMatches(String productId){
+        return product.idMatches(productId);
+    }
+    
     ////////////////////////////////////////
     // --------- SETTER METHODS --------- //
     ////////////////////////////////////////

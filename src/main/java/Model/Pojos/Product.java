@@ -41,6 +41,10 @@ public final class Product{
     // ------ INTERACTABLE METHODS ------ //
     ////////////////////////////////////////
         
+    public boolean idMatches(String productId){
+        return this.productId.equals(productId);
+    }
+    
     ////////////////////////////////////////
     // --------- SETTER METHODS --------- //
     ////////////////////////////////////////

@@ -12,3 +12,5 @@ nbactions.xml
 
 
 # End of https://www.gitignore.io/api/netbeans
+/target/
+/nbproject/
