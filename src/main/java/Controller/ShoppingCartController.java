@@ -39,8 +39,7 @@ public class ShoppingCartController extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher dispatcher = null;
-        dispatcher = request.getRequestDispatcher("/shopping-cart.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/shopping-cart.jsp");
         
         ShoppingCart dummyCart = new ShoppingCart();
         
@@ -50,18 +49,22 @@ public class ShoppingCartController extends HttpServlet {
         String requestType = request.getParameter("requestType");
         requestType = requestType ==null? "" : requestType;
         
-        if(requestType.equals("setToCart")){
-            //Add Edit Cart
-            int quantity = Integer.parseInt(request.getParameter("quantity"));
-            dummyCart.editCartItem(product, quantity);
-        }else if(requestType.equals("removeFromCart")){
-            //Remove From Cart
-            dummyCart.removeFromCart(product);
-        }else{
-            dummyCart.editCartItem(productService.findProduct("L704"), 5);
-            dummyCart.editCartItem(productService.findProduct("P106"), 2);
-            dummyCart.editCartItem(productService.findProduct("Y005"), 7);
-            dummyCart.editCartItem(productService.findProduct("G514"), 1);
+        switch (requestType) {
+            case "setToCart":
+                //Add Edit Cart
+                int quantity = Integer.parseInt(request.getParameter("quantity"));
+                dummyCart.editCartItem(product, quantity);
+                break;
+            case "removeFromCart":
+                //Remove From Cart
+                dummyCart.removeFromCart(product);
+                break;
+            default:
+                dummyCart.editCartItem(productService.findProduct("L704"), 5);
+                dummyCart.editCartItem(productService.findProduct("P106"), 2);
+                dummyCart.editCartItem(productService.findProduct("Y005"), 7);
+                dummyCart.editCartItem(productService.findProduct("G514"), 1);
+                break;
         }
         
         request.setAttribute("shoppingCart", dummyCart);
