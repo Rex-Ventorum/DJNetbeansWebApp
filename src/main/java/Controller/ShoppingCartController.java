@@ -5,7 +5,10 @@
  */
 package Controller;
 
+import Model.FileReaderProductService;
 import Model.Pojos.Product;
+import Model.ProductService;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -20,6 +23,19 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ShoppingCartController extends HttpServlet {
 
+    private ProductService productService;
+
+    @Override
+    public void init() {
+        String path = getServletContext().getRealPath("WEB-INF" + File.separatorChar + "WebProducts.txt");  
+        File file = new File(path);
+        try {
+            productService = new FileReaderProductService(file);
+        } catch (IOException ex) {
+            productService = null;
+        }
+    }
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher dispatcher = null;

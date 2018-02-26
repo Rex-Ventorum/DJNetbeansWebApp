@@ -68,16 +68,17 @@
             </div>
 
             <div class="form">
-                <form class="form-inline">
+                <form class="form-inline" method="post" action="ShoppingCartController">
                     <div class="form-group">
                         <label class="sr-only" for="exampleInputAmount">Add X Amount To Cart</label>
                         <div class="input-group">
                             <div class="input-group-addon">Buy</div>
-                            <input type="number" class="form-control" id="exampleInputAmount" placeholder="Amount">
+                            <input type="hidden" name="productId" value=<c:out value="${product.productId}"/>/>
+                            <input type="number" name="quantity" class="form-control" id="exampleInputAmount" placeholder="Quantity">
                             <div class="input-group-addon">For: $0.00</div>
                         </div>
                     </div>
-                    <button type="button" class="btn">Add To Cart</button>
+                    <button type="submit" class="btn" value="POST">Add To Cart</button>
                 </form>
             </div>
         </div>

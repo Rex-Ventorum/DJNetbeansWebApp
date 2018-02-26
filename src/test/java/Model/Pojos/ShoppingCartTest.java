@@ -5,7 +5,6 @@
  */
 package Model.Pojos;
 
-import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -17,185 +16,136 @@ import static org.junit.Assert.*;
  * @author Programming
  */
 public class ShoppingCartTest {
-
-    private static final Product dummyProduct = new Product("001", "DUMMY ITEM", .01, "None.png", "This Is A Dummy Item", "This Is A Dummy Item");
-    private static final Product keepMeProduct = new Product("002", "DUMMY ITEM 2", .01, "None.png", "This Is A Dummy Item", "This Is A Dummy Item");
+    
+    private static final Product dummyProduct = new Product("001","Dummy Product",0.00,"n/a","n/a","n/a");
+    private static final Product keepMeProduct = new Product("002","Keep Me Product",0.00,"n/a","n/a","n/a");
+    private static final int dummyProductQnt = 100;
+    private static final int keepMeProductQnt = 200;
     private ShoppingCart instance;
-
+    
     public ShoppingCartTest() {
     }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
+        
     @Before
     public void setUp() {
         instance = new ShoppingCart();
     }
-
+    
     @After
     public void tearDown() {
         instance = null;
+    } 
+    
+    // ----- SET PRODUCT TESTS ----- //
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void setToCartRejectsNullProduct(){
+        instance.setToCart(null, 1);
     }
-
+    
     @Test
-    public void addProductRejectsNullProduct() {
-        try {
-            instance.addProduct(null);
-            fail();
-        } catch (IllegalArgumentException e) {
-            //Do Nothing This Is What We Want!
-        }
-
-        try {
-            instance.addProduct(null, 1);
-            fail();
-        } catch (IllegalArgumentException e) {
-            //Do Nothing This Is What We Want!
-        }
+    public void setToCartRejectsQuantitesBelowOne(){
+       int[] testValues = {0,-1,-100,-1000};
+       for(int testValue : testValues){
+           try{
+               instance.setToCart(dummyProduct, testValue);
+               fail();
+           }catch(IllegalArgumentException e){
+               //Do nothing this is what we want!
+           }
+       }
     }
-
+    
     @Test
-    public void addProductRejectsQuntatiesLessThanOne() {
-        int[] testValues = {0, -1, -100, -1000};
-        for (int value : testValues) {
-            try {
-                instance.addProduct(dummyProduct, value);
-                fail();
-            } catch (IllegalArgumentException e) {
-                //Do Nothing This Is What We want!
+    public void setToCartAcceptsValidProductsAndQuantites(){
+        int[] testQnts = {1,20,30,400,500};
+        Product[] testProducts = {dummyProduct, keepMeProduct};
+        for(Product testProduct : testProducts){
+            for(int testQnt : testQnts){
+                instance.setToCart(testProduct, testQnt);
             }
-        }//end of test loop
+        }
     }
     
-   @Test 
-   public void addProductAcceptsValidProductAndQuntaties(){
-       instance.addProduct(dummyProduct);
-       instance.addProduct(keepMeProduct,5);
-   }
-    
     @Test
-    public void addProductNoQuantityAddsOneCartItem() {
+    public void setToCartWithNewProductCreatesNewCartItem(){
         int listSizeBefore = instance.getItemList().size();
-        instance.addProduct(dummyProduct);
+        instance.setToCart(dummyProduct, 1);
         int listSizeAfter = instance.getItemList().size();
+        assertEquals(listSizeBefore+1,listSizeAfter);
+        
+        listSizeBefore = instance.getItemList().size();
+        instance.setToCart(keepMeProduct, 1);
+        listSizeAfter = instance.getItemList().size();
         assertEquals(listSizeBefore+1,listSizeAfter);
     }
     
     @Test
-    public void addProductWithQuantityAddsOneCartItem() {
-        int listSizeBefore = instance.getItemList().size();
-        instance.addProduct(dummyProduct,5);
-        int listSizeAfter = instance.getItemList().size();
-        assertEquals(listSizeBefore+1,listSizeAfter);
-    }
-    
-    @Test
-    public void addProductWithSameProductIncreasesQuanityNotList() {
-        int listSizeBefore = instance.getItemList().size();
-        instance.addProduct(dummyProduct);
-        instance.addProduct(dummyProduct);
-        instance.addProduct(dummyProduct,5);
-        int listSizeAfter = instance.getItemList().size();
-        int cartItemQnt = instance.getCartItemFor(dummyProduct).getQuantity();
-        int expectedCartItemQnt = 7;
-        assertEquals(listSizeBefore+1,listSizeAfter);
-        assertEquals(cartItemQnt,expectedCartItemQnt);
+    public void setToCartWithExisitingProductUpdatesQuantyNOTListSize(){
+        instance.setToCart(dummyProduct, 1);
+        instance.setToCart(dummyProduct, 5);
+        CartItem cartItem = instance.getCartItemFor(dummyProduct);
+        
+        int expectedQuantity = 5;
+        assertEquals(cartItem.getQuantity(),expectedQuantity);
+        
+        int expectedListSize = 1;
+        assertEquals(instance.getItemList().size(), expectedListSize);
     }
     
     // ----- REMOVE PRODUCT TESTS ----- //
     
-    //Helper (assumes addProduct Is Bug Free)
-    public void stageCartWithItems(){
-        instance.addProduct(dummyProduct,100);
-        instance.addProduct(keepMeProduct,100);
+    private void stageCart(){
+        instance.setToCart(dummyProduct,dummyProductQnt);
+        instance.setToCart(keepMeProduct, keepMeProductQnt);
+    }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void removeFromCartRejectsNullProduct(){
+        instance.removeFromCart(null);
     }
     
     @Test
-    public void removeProductRejectsNullProduct() {
-        try {
-            instance.removeProduct(null);
-            fail();
-        } catch (IllegalArgumentException e) {
-            //Do Nothing This Is What We Want!
-        }
-
-        try {
-            instance.removeProduct(null, 1);
-            fail();
-        } catch (IllegalArgumentException e) {
-            //Do Nothing This Is What We Want!
-        }
-    }
-
-    @Test
-    public void removeProductRejectsQuntatiesLessThanOne() {
-        int[] testValues = {0, -1, -100, -1000};
-        for (int value : testValues) {
-            try {
-                instance.removeProduct(dummyProduct, value);
-                fail();
-            } catch (IllegalArgumentException e) {
-                //Do Nothing This Is What We want!
-            }
-        }//end of test loop
-    }
-    
-    @Test
-    public void removeProductNoQntCompletyRemovesParamProductOnly() {
-        stageCartWithItems();
-        instance.removeProduct(dummyProduct);
-        assertTrue(instance.getCartItemFor(dummyProduct) == null);
-        assertTrue(instance.getCartItemFor(keepMeProduct) != null);
-    }
-    
-    @Test
-    public void removeProductWithQntDeductsParamProductQntOnly(){
-        stageCartWithItems();
-        instance.removeProduct(dummyProduct,25);
-        CartItem dummyCart = instance.getCartItemFor(dummyProduct);
-        CartItem keepCart = instance.getCartItemFor(keepMeProduct);
-        int expectedDummyItems = 75;
-        int expectedKeepMeItems = 100;
-        assertEquals(expectedDummyItems,dummyCart.getQuantity());
-        assertEquals(expectedKeepMeItems,keepCart.getQuantity());
-    }
- 
-    @Test
-    public void removeProductWithoutAddingProductDoesNothing(){
+    public void removeFromCartDecreasesListSizeByOne(){
+        stageCart();
         int listSizeBefore = instance.getItemList().size();
-        instance.removeProduct(dummyProduct);
-        instance.removeProduct(dummyProduct,5);
+        instance.removeFromCart(dummyProduct);
         int listSizeAfter = instance.getItemList().size();
-        assertEquals(listSizeBefore,listSizeAfter);
-    }
-    
-    // ----- CONTAINS PRODUCT TEST ----- //
-    
-    @Test 
-    public void containsProductReturnsTrueWhenProductAdded(){
-        instance.addProduct(dummyProduct);
-        assertTrue(instance.containsProduct(dummyProduct));
-        assertTrue(instance.containsProduct(dummyProduct.getProductId()));
+        assertEquals(listSizeBefore-1,listSizeAfter);
     }
     
     @Test
-    public void containsProductReturnsFalseWhenProductNotAdded(){
-        assertFalse(instance.containsProduct(dummyProduct));
-        assertFalse(instance.containsProduct(dummyProduct.getProductId()));
+    public void removeFromCartRemovesCorrectCartItem(){
+        stageCart();
+        instance.removeFromCart(dummyProduct);
+        CartItem dummyItem = instance.getCartItemFor(dummyProduct);
+        CartItem keepItem = instance.getCartItemFor(keepMeProduct);
+        assertTrue(dummyItem == null);
+        assertTrue(keepItem != null);
+    }
+    
+    // ----- GET CART ITEM TESTS ----- //
+    
+    @Test
+    public void getCartItemReturnsNullWithNullParam(){
+        assertTrue(instance.getCartItemFor(null) == null);
     }
     
     @Test
-    public void containsProductReturnsFalseWhenProductAddedAndRemoved(){
-        instance.addProduct(dummyProduct);
-        instance.removeProduct(dummyProduct);
-        assertFalse(instance.containsProduct(dummyProduct));
-        assertFalse(instance.containsProduct(dummyProduct.getProductId()));
+    public void getCartItemReturnsCorrectCartItem(){
+        stageCart();
+        CartItem cartItem = instance.getCartItemFor(dummyProduct);
+        assertEquals(cartItem.getProduct(),dummyProduct);
+        assertEquals(cartItem.getQuantity(),dummyProductQnt);
         
-        instance.addProduct(dummyProduct,50);
-        instance.removeProduct(dummyProduct,50);
-        assertFalse(instance.containsProduct(dummyProduct));
-        assertFalse(instance.containsProduct(dummyProduct.getProductId()));
+        cartItem = instance.getCartItemFor(keepMeProduct);
+        assertEquals(cartItem.getProduct(),keepMeProduct);
+        assertEquals(cartItem.getQuantity(),keepMeProductQnt);
+    }
+    
+    @Test
+    public void getCartItemReturnsNullWhenItemNotInCart(){
+        CartItem cartItem = instance.getCartItemFor(dummyProduct);
+        assertTrue(cartItem == null);
     }
 }

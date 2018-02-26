@@ -50,7 +50,7 @@
         </nav>
 
         <div class="body-contnet">
-
+            <!-- PAYMENT INFO FORM -->
             <form>
                 <div class="form-group">
                     <label class="sr-only" for="exampleInputAmount">Street Address</label>
@@ -83,6 +83,7 @@
                 <input class="btn" type="submit" value="Complete Prurchase">
             </form>
 
+            <!-- CART ITEM LIST -->
             <ul class="list-group">
                 <li class="list-group-item">
                     <span class="badge">x1</span>

@@ -1,20 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Model.Pojos;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 
-/**
- *
- * @author L117student
- */
 public final class ShoppingCart {
     
+    private String shoppingCartId;
     private List<CartItem> itemList;
     
     ////////////////////////////////////////
@@ -22,6 +15,7 @@ public final class ShoppingCart {
     ////////////////////////////////////////
     
     public ShoppingCart(){
+        shoppingCartId = UUID.randomUUID().toString();
         itemList = new LinkedList();
     }
     
@@ -29,107 +23,82 @@ public final class ShoppingCart {
     // ------ INTERACTABLE METHODS ------ //
     ////////////////////////////////////////
     
-    public void addProduct(Product product){addProduct(product,1);}
-    public void addProduct(Product product, int quantity){
-        validateProductQuantity(product,quantity);
+    public void setToCart(Product product, int quantity){
+        if(product == null) throw new IllegalArgumentException("Product May Not Be Null");
+        if(quantity < 1) throw new IllegalArgumentException("Quantity Must Be Greater Than 0");
         
-        boolean itemInCart = false;
-        for(CartItem cartItem : itemList){
-            if(cartItem.getProduct().equals(product)){
-                itemInCart = true;
-                cartItem.setQuantity(cartItem.getQuantity()+quantity);
-                break;
+        CartItem cartItem = null;
+        for(CartItem existingItem : itemList){
+            if(existingItem.idMatches(product.getProductId())){
+                cartItem = existingItem; break;
             }
         }//end of loop
         
-        if(itemInCart == false){
+        if(cartItem != null){
+            //If Item Exsists Update Quantity
+            cartItem.setQuantity(quantity);
+        }else{
+            //Create New Cart Item
             itemList.add(new CartItem(product,quantity));
         }
-        
     }
     
-    public void removeProduct(Product product){removeProduct(product,Integer.MAX_VALUE);}
-    public void removeProduct(Product product, int quantity){
-        validateProductQuantity(product,quantity);
-        
-        CartItem editMe = null;
-        for(CartItem cartItem : itemList){
-            if(cartItem.getProduct().equals(product)){
-                editMe = cartItem; break;
+    public void removeFromCart(Product product){
+        if(product == null) throw new IllegalArgumentException("Product May Not Be Null");
+        for(Iterator<CartItem> iterator = itemList.iterator(); iterator.hasNext();){
+            CartItem cartItem = iterator.next();
+            if(cartItem.idMatches(product.getProductId())){
+                iterator.remove(); break;
             }
-        }
-        
-        if(editMe != null){
-            int oldQnt = editMe.getQuantity();
-            int newQnt = oldQnt-quantity;
-            if(newQnt <= 0) itemList.remove(editMe);
-            else editMe.setQuantity(newQnt);
-        }
-    }
-    
-    public boolean containsProduct(Product product){
-        if(product == null) return false;
-        else return containsProduct(product.getProductId());
-    }
-    
-    public boolean containsProduct(String productId){
-        if(productId == null || productId.isEmpty()) return false;
-        else return getCartItemFor(productId)!= null;
+        }//end of loop;
     }
     
     ////////////////////////////////////////
     // --------- SETTER METHODS --------- //
     ////////////////////////////////////////
-    
+
+    public void setShoppingCartId(String shoppingCartId) {
+        if(shoppingCartId == null || shoppingCartId.isEmpty()) throw new IllegalArgumentException("Shopping Cart Id May Not Be Null Or Empty");
+        this.shoppingCartId = shoppingCartId;
+    }
+
     public void setItemList(List<CartItem> itemList) {
         if(itemList == null) throw new IllegalArgumentException("Item List May Not Be Null");
         this.itemList = itemList;
     }
-    
+        
     ////////////////////////////////////////
     // --------- GETTER METHODS --------- //
     ////////////////////////////////////////
     
     public CartItem getCartItemFor(Product product){
         if(product == null) return null;
-        else return getCartItemFor(product.getProductId());
-    }
-    
-    public CartItem getCartItemFor(String productId){
+        
         CartItem foundItem = null;
         for(CartItem cartItem : itemList){
-            if(cartItem.idMatches(productId)){
-                foundItem = cartItem;
-                break;
+            if(cartItem.idMatches(product.getProductId())){
+                foundItem = cartItem; break;
             }
         }//end of loop
+        
         return foundItem;
     }
     
+    public String getShoppingCartId() {
+        return shoppingCartId;
+    }
+
     public List<CartItem> getItemList() {
         return itemList;
-    }
-    
-    public double getCartTotalCost(){
-        double total = 0;
-        for(CartItem cartItem : itemList){
-            total += cartItem.getTotalCost();
-        }
-        return total;
     }
     
     ////////////////////////////////////////
     // ----- PRIVATE HELPER METHODS ----- //
     ////////////////////////////////////////
     
-    private void validateProductQuantity(Product product, int quantity){
-        if(product == null) throw new IllegalArgumentException("Product May Not Be Null");
-        if(quantity < 1) throw new IllegalArgumentException("Quanitity Must Greater Than 0");
-    }
-    
     ////////////////////////////////////////
     // --------- OTHER METHOID ---------- //
     ////////////////////////////////////////
 
-
+    
 }
