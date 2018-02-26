@@ -8,6 +8,7 @@
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
     <head>
@@ -72,7 +73,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading"><c:out value="${product.productName}"/></h4>
-                                    Price: $<c:out value="${product.unitPrice}"/> <br> In Stock: yes
+                                    Price: <fmt:formatNumber value="${product.unitPrice}" type="currency"/> <br> In Stock: yes
                                 </div>
                             </a>
                         </div> 

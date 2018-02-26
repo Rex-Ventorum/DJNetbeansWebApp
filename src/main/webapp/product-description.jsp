@@ -7,6 +7,7 @@
 <%@page import="Model.Pojos.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -62,7 +63,7 @@
                 <div class="media-body">
                     <h2 class="media-heading"><c:out value="${product.productName}"/></h2>
                     <h4> <c:out value="${product.descriptionShort}"/> </h4>
-                    <h4>Price: $<c:out value="${product.unitPrice}"/> <br> In Stock: Yes</h4>
+                    <h4>Price: <fmt:formatNumber value="${product.unitPrice}" type="currency"/> <br> In Stock: Yes</h4>
                     <p> <c:out value="${product.descriptionLong}"/> </p>
                 </div>
             </div>

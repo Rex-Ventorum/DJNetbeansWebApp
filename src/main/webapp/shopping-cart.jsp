@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -90,7 +91,7 @@
                 <c:forEach var="cartItem" items="${shoppingCart.itemList}">
                 <li class="list-group-item">
                     <span class="badge"><c:out value="${cartItem.quantity}"/></span>
-                    <span class="badge">$<c:out value="${cartItem.totalCost}"/></span>
+                    <span class="badge"><fmt:formatNumber value="${cartItem.totalCost}" type="currency"/></span>
                     <img class="media-object" height="75" width="75" alt="<c:out value="${cartItem.product.productName}"/> Image"
                          src="Images/<c:out value="${cartItem.product.imageURL}"/>"/>
                     <h4 class="media-heading"><c:out value="${cartItem.product.productName}"/></h4>
