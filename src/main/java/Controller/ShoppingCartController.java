@@ -7,6 +7,7 @@ package Controller;
 
 import Model.FileReaderProductService;
 import Model.Pojos.Product;
+import Model.Pojos.ShoppingCart;
 import Model.ProductService;
 import java.io.File;
 import java.io.IOException;
@@ -40,6 +41,30 @@ public class ShoppingCartController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher dispatcher = null;
         dispatcher = request.getRequestDispatcher("/shopping-cart.jsp");
+        
+        ShoppingCart dummyCart = new ShoppingCart();
+        
+        //TODO Add Error Handeling!
+        String productId = request.getParameter("productId");
+        Product product = productService.findProduct(productId);
+        String requestType = request.getParameter("requestType");
+        requestType = requestType ==null? "" : requestType;
+        
+        if(requestType.equals("setToCart")){
+            //Add Edit Cart
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+            dummyCart.editCartItem(product, quantity);
+        }else if(requestType.equals("removeFromCart")){
+            //Remove From Cart
+            dummyCart.removeFromCart(product);
+        }else{
+            dummyCart.editCartItem(productService.findProduct("L704"), 5);
+            dummyCart.editCartItem(productService.findProduct("P106"), 2);
+            dummyCart.editCartItem(productService.findProduct("Y005"), 7);
+            dummyCart.editCartItem(productService.findProduct("G514"), 1);
+        }
+        
+        request.setAttribute("shoppingCart", dummyCart);
         dispatcher.forward(request, response);
     }
 

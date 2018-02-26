@@ -23,7 +23,7 @@ public final class ShoppingCart {
     // ------ INTERACTABLE METHODS ------ //
     ////////////////////////////////////////
     
-    public void setToCart(Product product, int quantity){
+    public void editCartItem(Product product, int quantity){
         if(product == null) throw new IllegalArgumentException("Product May Not Be Null");
         if(quantity < 1) throw new IllegalArgumentException("Quantity Must Be Greater Than 0");
         

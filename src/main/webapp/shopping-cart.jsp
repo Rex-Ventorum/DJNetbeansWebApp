@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -85,57 +87,17 @@
 
             <!-- CART ITEM LIST -->
             <ul class="list-group">
+                <c:forEach var="cartItem" items="${shoppingCart.itemList}">
                 <li class="list-group-item">
-                    <span class="badge">x1</span>
-                    <span class="badge">$0.00</span>
-                    <img class="media-object" src="images/unknownItem.png" height="75" width="75" alt="Image Picture">
-                    <h4 class="media-heading">Item Heading</h4>
+                    <span class="badge"><c:out value="${cartItem.quantity}"/></span>
+                    <span class="badge">$<c:out value="${cartItem.totalCost}"/></span>
+                    <img class="media-object" height="75" width="75" alt="<c:out value="${cartItem.product.productName}"/> Image"
+                         src="Images/<c:out value="${cartItem.product.imageURL}"/>"/>
+                    <h4 class="media-heading"><c:out value="${cartItem.product.productName}"/></h4>
                     <input type="button" value="Remove">
                 </li>
-                <li class="list-group-item">
-                    <span class="badge">x1</span>
-                    <span class="badge">$0.00</span>
-                    <img class="media-object" src="images/unknownItem.png" height="75" width="75" alt="Image Picture">
-                    <h4 class="media-heading">Item Heading</h4>
-                    <input type="button" value="Remove">
-                </li>
-                <li class="list-group-item">
-                    <span class="badge">x1</span>
-                    <span class="badge">$0.00</span>
-                    <img class="media-object" src="images/unknownItem.png" height="75" width="75" alt="Image Picture">
-                    <h4 class="media-heading">Item Heading</h4>
-                    <input type="button" value="Remove">
-                </li>
-                <li class="list-group-item">
-                    <span class="badge">x1</span>
-                    <span class="badge">$0.00</span>
-                    <img class="media-object" src="images/unknownItem.png" height="75" width="75" alt="Image Picture">
-                    <h4 class="media-heading">Item Heading</h4>
-                    <input type="button" value="Remove">
-                </li>
-                <li class="list-group-item">
-                    <span class="badge">x1</span>
-                    <span class="badge">$0.00</span>
-                    <img class="media-object" src="images/unknownItem.png" height="75" width="75" alt="Image Picture">
-                    <h4 class="media-heading">Item Heading</h4>
-                    <input type="button" value="Remove">
-                </li>
-                <li class="list-group-item">
-                    <span class="badge">x1</span>
-                    <span class="badge">$0.00</span>
-                    <img class="media-object" src="images/unknownItem.png" height="75" width="75" alt="Image Picture">
-                    <h4 class="media-heading">Item Heading</h4>
-                    <input type="button" value="Remove">
-                </li>
-                <li class="list-group-item">
-                    <span class="badge">x1</span>
-                    <span class="badge">$0.00</span>
-                    <img class="media-object" src="images/unknownItem.png" height="75" width="75" alt="Image Picture">
-                    <h4 class="media-heading">Item Heading</h4>
-                    <input type="button" value="Remove">
-                </li>
+                </c:forEach>
             </ul>
-
         </div>
 
         <footer class="footer">

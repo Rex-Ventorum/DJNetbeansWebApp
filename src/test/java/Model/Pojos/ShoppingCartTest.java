@@ -36,19 +36,19 @@ public class ShoppingCartTest {
         instance = null;
     } 
     
-    // ----- SET PRODUCT TESTS ----- //
+    // ----- EDET CART TESTS ----- //
     
     @Test (expected = IllegalArgumentException.class)
-    public void setToCartRejectsNullProduct(){
-        instance.setToCart(null, 1);
+    public void editCartItemRejectsNullProduct(){
+        instance.editCartItem(null, 1);
     }
     
     @Test
-    public void setToCartRejectsQuantitesBelowOne(){
+    public void editCartItemRejectsQuantitesBelowOne(){
        int[] testValues = {0,-1,-100,-1000};
        for(int testValue : testValues){
            try{
-               instance.setToCart(dummyProduct, testValue);
+               instance.editCartItem(dummyProduct, testValue);
                fail();
            }catch(IllegalArgumentException e){
                //Do nothing this is what we want!
@@ -57,33 +57,33 @@ public class ShoppingCartTest {
     }
     
     @Test
-    public void setToCartAcceptsValidProductsAndQuantites(){
+    public void editCartItemAcceptsValidProductsAndQuantites(){
         int[] testQnts = {1,20,30,400,500};
         Product[] testProducts = {dummyProduct, keepMeProduct};
         for(Product testProduct : testProducts){
             for(int testQnt : testQnts){
-                instance.setToCart(testProduct, testQnt);
+                instance.editCartItem(testProduct, testQnt);
             }
         }
     }
     
     @Test
-    public void setToCartWithNewProductCreatesNewCartItem(){
+    public void editCartItemWithNewProductCreatesNewCartItem(){
         int listSizeBefore = instance.getItemList().size();
-        instance.setToCart(dummyProduct, 1);
+        instance.editCartItem(dummyProduct, 1);
         int listSizeAfter = instance.getItemList().size();
         assertEquals(listSizeBefore+1,listSizeAfter);
         
         listSizeBefore = instance.getItemList().size();
-        instance.setToCart(keepMeProduct, 1);
+        instance.editCartItem(keepMeProduct, 1);
         listSizeAfter = instance.getItemList().size();
         assertEquals(listSizeBefore+1,listSizeAfter);
     }
     
     @Test
-    public void setToCartWithExisitingProductUpdatesQuantyNOTListSize(){
-        instance.setToCart(dummyProduct, 1);
-        instance.setToCart(dummyProduct, 5);
+    public void editCartItemWithExisitingProductUpdatesQuantyNOTListSize(){
+        instance.editCartItem(dummyProduct, 1);
+        instance.editCartItem(dummyProduct, 5);
         CartItem cartItem = instance.getCartItemFor(dummyProduct);
         
         int expectedQuantity = 5;
@@ -96,8 +96,8 @@ public class ShoppingCartTest {
     // ----- REMOVE PRODUCT TESTS ----- //
     
     private void stageCart(){
-        instance.setToCart(dummyProduct,dummyProductQnt);
-        instance.setToCart(keepMeProduct, keepMeProductQnt);
+        instance.editCartItem(dummyProduct,dummyProductQnt);
+        instance.editCartItem(keepMeProduct, keepMeProductQnt);
     }
     
     @Test (expected = IllegalArgumentException.class)
