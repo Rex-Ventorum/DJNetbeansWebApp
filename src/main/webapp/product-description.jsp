@@ -77,8 +77,8 @@
                             <div class="input-group-addon headAddon">Buy</div>
                             <input type="hidden" name="requestType" value="setToCart">
                             <input type="hidden" name="productId" value="<c:out value="${product.productId}"/>"/>
-                            <input type="number" min="0" max="1000" id="quantity" name="quantity" class="form-control" id="exampleInputAmount" value = "0">
-                            <div class="input-group-addon tailAddon" id="TotalTag">For: $0.00</div>
+                            <input type="number" min="1" max="1000" id="quantity" name="quantity" class="form-control" id="exampleInputAmount" value = "1">
+                            <div class="input-group-addon tailAddon" id="TotalTag">For: <fmt:formatNumber value="${product.unitPrice}" type="currency"/></div>
                         </div>
                         <button type="submit" class="btn" value="POST">Add To Cart</button>
                     </div>
