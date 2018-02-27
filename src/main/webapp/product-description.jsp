@@ -47,7 +47,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" name="searchParam" placeholder="Search">
                                 <span class="input-group-btn">
-                                      <button type="submit" class="btn btn-default" value="POST">Search</button>
+                                    <button type="submit" class="btn btn-default" value="POST">Search</button>
                                 </span>
                             </div>
                         </form>
@@ -63,7 +63,8 @@
                 <div class="media-body">
                     <h2 class="media-heading"><c:out value="${product.productName}"/></h2>
                     <h4> <c:out value="${product.descriptionShort}"/> </h4>
-                    <h4>Price: <fmt:formatNumber value="${product.unitPrice}" type="currency"/> <br> In Stock: Yes</h4>
+                    <h4> Price: <fmt:formatNumber value="${product.unitPrice}" type="currency"/> </h4>
+                    <h4> In Stock: Yes</h4>
                     <p> <c:out value="${product.descriptionLong}"/> </p>
                 </div>
             </div>
@@ -73,17 +74,17 @@
                     <div class="form-group">
                         <label class="sr-only" for="exampleInputAmount">Add X Amount To Cart</label>
                         <div class="input-group">
-                            <div class="input-group-addon">Buy</div>
+                            <div class="input-group-addon headAddon">Buy</div>
                             <input type="hidden" name="requestType" value="setToCart">
                             <input type="hidden" name="productId" value="<c:out value="${product.productId}"/>"/>
-                            <input type="number" min="0" name="quantity" class="form-control" id="exampleInputAmount" value = "0">
-                            <div class="input-group-addon">For: $0.00</div>
+                            <input type="number" min="0" max="1000" id="quantity" name="quantity" class="form-control" id="exampleInputAmount" value = "0">
+                            <div class="input-group-addon tailAddon" id="TotalTag">For: $0.00</div>
                         </div>
+                        <button type="submit" class="btn" value="POST">Add To Cart</button>
                     </div>
-                    <button type="submit" class="btn" value="POST">Add To Cart</button>
                 </form>
-            </div>
-        </div>
+            </div> 
+        </div> <!--End of Body Content -->
 
         <footer class="footer">
             <div class="footer_contents">
@@ -95,5 +96,26 @@
         <!-- Should Stay At Bottom and In Body Tag -->
         <script src  ="js/jquery.min.js"></script> 
         <script src  ="js/bootstrap.min.js"></script>
+
+        <script>
+            /* event listener */
+            document.getElementsByName("quantity")[0].addEventListener('input', calculateTotal);
+
+            /* function */
+            function calculateTotal() {
+                var cost = <c:out value="${product.unitPrice}"/>;
+                var qnt = Number(this.value);
+                var minValue = Number($('#quantity').prop('min'));
+                var maxValue = Number($('#quantity').prop('max'));
+                if (qnt < minValue) {
+                    this.value = minValue;
+                } else if (qnt > maxValue) {
+                    this.value = maxValue;
+                } else {
+                    document.getElementById("TotalTag").innerHTML = "For: $" + (cost * qnt);
+                }
+            }
+        </script>
+
     </body>
 </html>
