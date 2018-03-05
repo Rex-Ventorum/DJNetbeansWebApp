@@ -1,0 +1,97 @@
+html{
+    min-height:100%;
+    margin:0;
+}
+
+body{
+    padding-top:120px;
+    padding-bottom: 40px;
+    color: rgba(255,255,255,1);
+    background: -webkit-linear-gradient(-90deg, rgba(65,65,65,1) 0, rgba(90,90,90,1) 50%, rgba(65,65,65,1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(65,65,65,1) 0, rgba(90,90,90,1) 50%, rgba(65,65,65,1) 100%);
+    background: linear-gradient(180deg, rgba(65,65,65,1) 0, rgba(90,90,90,1) 50%, rgba(65,65,65,1) 100%);
+}
+
+nav{
+    text-align: center;
+}
+
+.nav a{
+    color: #dddddd !important;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .navbar ul{
+        width:100%;
+        margin:0 auto;
+        padding:0;
+        text-align:center;
+    }
+
+    .nav li { 
+        display:inline-block;
+        width:25%;
+        margin:0;
+        padding:0;
+    }
+}
+
+.navbar{
+    color: rgba(255,255,255,1);
+    background: -webkit-linear-gradient(-90deg, rgba(175,200,120,1) 0, rgba(120,150,60,1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(175,200,120,1) 0, rgba(120,150,60,1) 100%);
+    background: linear-gradient(180deg, rgba(175,200,120,1) 0, rgba(120,150,60,1) 100%);
+    z-index:9;
+}
+
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+
+li.current a{
+    box-shadow:
+    0px 0px 9px #333333,
+    inset 0px 0px 9px #333333;
+    border-radius: 5px;
+}
+
+nav form{
+    padding: 10px;
+    width: 75%;
+    text-align: center;
+    align-content: center;
+}
+
+.body-contnet{
+    bottom: 500px;
+}
+
+.footer{
+    text-align: right;
+    width:100%;
+    position:fixed;
+    bottom:0pt;
+    left: 0pt;
+    color: rgba(255,255,255,1);
+    background: -webkit-linear-gradient(-90deg, rgba(120,150,60,1) 0, rgba(175,200,120,1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(120,150,60,1) 0, rgba(175,200,120,1) 100%);
+    background: linear-gradient(180deg, rgba(120,150,60,1) 0, rgba(175,200,120,1) 100%);
+    background-position: 0% 0%;
+    background-attachment: scroll;
+    z-index:9;
+}
+
+.footer_contents {
+    height:24px;
+    width: 90%;
+    margin:auto;
+}
+
+a:hover{
+    box-shadow:
+    0px 0px 9px #0000ff,
+    inset 0px 0px 9px #0000ff;
+}
