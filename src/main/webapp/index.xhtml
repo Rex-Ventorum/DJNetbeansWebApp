@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>The Dark Brew Web Portal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -25,9 +26,10 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="nav-content">
+                <h:form>
                 <ul class="nav navbar-nav">
                     <li class = "current"><a href="javascript:;">Home</a></li>
-                    <li><a href="ProductController">Products</a></li>
+                    <li><h:commandLink action="#{productBean.displayAllProducts()}">Products</h:commandLink></li>
                     <li><a href="ShoppingCartController">Shopping Cart</a></li>
                     <li>
                         <form class="navbar-form center-block" method="post" action="ProductController" role="search">
@@ -40,6 +42,7 @@
                         </form>
                     </li> 
                 </ul>
+                </h:form>
             </div>
         </nav>
 
