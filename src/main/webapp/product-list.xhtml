@@ -12,7 +12,7 @@ and open the template in the editor.
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui = "http://java.sun.com/jsf/facelets">
-    <head>
+    <h:head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -22,8 +22,8 @@ and open the template in the editor.
         <link href="css/animate.css" rel="styleSheet"/>
         <link href="css/main.css" rel="stylesheet"/>
         <link href="css/product-list.css" rel="stylesheet"/>
-    </head>
-    <body>
+    </h:head>
+    <h:body>
         <nav class="navbar navbar-default navbar-fixed-top">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -62,22 +62,20 @@ and open the template in the editor.
             <div class="productList container-fluid">
                 <div class ="row">
                     <ui:repeat var="product" value="#{productBean.productList}" varStatus="counter">
-                        <!--<c:if test="#{(counter.index mod 4) eq 0 and not counter.index eq 1}">
-                        </div><div class="row">
-                        </c:if>
-                            -->
                     <div class="col-md-3 col-sm-12">
                         <div class="media">
                             <a href="#" class="list-group-item">
                                 <div class="media-left media-middle">
                                     <img class="media-object" src="Images/#{product.imageURL}" 
-                                         height="125" width="125" alt="Picture of #{product.productName}">
+                                         height="125" width="125" alt="Picture of #{product.productName}"/>
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading"><h:outputText value="#{product.productName}"/></h4>
                                     <h:outputText value="#{product.unitPrice}">
                                         <f:convertNumber pattern="Price: $0.00" type="currency"/>
                                     </h:outputText>
+                                    <br/>
+                                    <h:outputText value="In Stock: yes"/>
                                 </div>
                             </a>
                         </div> 
@@ -92,7 +90,7 @@ and open the template in the editor.
                 <ul class="pagination">
                     <li>
                         <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
+                            <span aria-hidden="true">&#xAB;</span>
                         </a>
                     </li>
                     <li><a href="#">1</a></li>
@@ -102,7 +100,7 @@ and open the template in the editor.
                     <li><a href="#">5</a></li>
                     <li>
                         <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
+                            <span aria-hidden="true">&#xAB;</span>
                         </a>
                     </li>
                 </ul>
@@ -111,7 +109,7 @@ and open the template in the editor.
 
         <footer class="footer">
             <div class="footer_contents">
-                <p class="text-muted">&copy; Brandon M. Dopp 2018</p>
+                <p class="text-muted">&#xA9; Brandon M. Dopp 2018</p>
             </div>
         </footer>
 
@@ -132,5 +130,5 @@ and open the template in the editor.
                });
             });
         </script>
-    </body>
+    </h:body>
 </html>
