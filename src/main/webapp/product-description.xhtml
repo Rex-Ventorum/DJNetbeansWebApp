@@ -39,7 +39,7 @@ and open the template in the editor.
                 <ul class="nav navbar-nav">
                     <li><a href="index.xhtml">Home</a></li>
                     <li><a href="#{productBean.displayAllProducts()}">Products</a></li>
-                    <li><a href="ShoppingCartController">Shopping Cart</a></li>
+                    <li><a href="shopping-cart.xhtml">Shopping Cart</a></li>
                     <li>
                         <h:form class="navbar-form center-block" role="search">
                             <div class="input-group">
@@ -72,20 +72,22 @@ and open the template in the editor.
             </div>
 
             <div class="form">
-                <form class="form-inline" method="post" name="addToCart" value= "true" action="ShoppingCartController">
+                <h:form class="form-inline">
                     <div class="form-group">
                         <label class="sr-only" for="exampleInputAmount">Add X Amount To Cart</label>
                         <div class="input-group">
                             <div class="input-group-addon headAddon">Buy</div>
-                            <input type="hidden" name="requestType" value="setToCart"/>
-                            <input type="hidden" name="productId" value="#{product.productId}"/>
-                            <input type="hidden" id="unitPrice" value="#{product.unitPrice}"/>
-                            <input type="number" min="1" max="1000" id="quantity" name="quantity" class="form-control" value = "1"/>
-                            <div class="input-group-addon tailAddon" id="TotalTag"><h:outputText value="#{product.unitPrice}"><f:convertNumber pattern="For $0.00" type="currency"/></h:outputText></div>
+                            <h:inputText class="form-control" value = "#{cartBean.qnt}"/>
+                            <div class="input-group-addon tailAddon" id="TotalTag">
+                                <h:outputText value="#{product.unitPrice}">
+                                    <f:convertNumber pattern="For $0.00" type="currency"/>
+                                </h:outputText>
+                            </div>
                         </div>
-                        <button type="submit" class="btn" value="POST">Add To Cart</button>
+                        <h:commandButton type="submit" class="btn" action="#{cartBean.addToCart(productBean.product)}" value="Add To Cart">
+                        </h:commandButton>
                     </div>
-                </form>
+                </h:form>
             </div> 
         </div> <!--End of Body Content -->
 
