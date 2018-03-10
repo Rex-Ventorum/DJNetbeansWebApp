@@ -28,6 +28,7 @@ public class ShoppingCartBean implements Serializable {
     ////////////////////////////////////////
     
     public String displayShoppingCart(){
+        qnt = 0;
         return "shopping-cart.xhtml";
     }
     
