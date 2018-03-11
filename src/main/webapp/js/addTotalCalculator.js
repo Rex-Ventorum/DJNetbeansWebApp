@@ -1,10 +1,8 @@
-/* event listener */
-document.getElementById("quantity")[0].addEventListener('input', calculateTotal);
-
 /* function */
 function calculateTotal() {
+    var dropDown = document.getElementById("j_idt12:quantity");
     var cost = Number(document.getElementById('unitPrice').value);
-    var qnt = Number(this.value);
+    var qnt = Number(dropDown.value);
     var minValue = 1;
     var maxValue = 1000;
     if (qnt < minValue) {
