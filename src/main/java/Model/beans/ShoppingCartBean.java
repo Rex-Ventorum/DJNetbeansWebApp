@@ -37,6 +37,11 @@ public class ShoppingCartBean implements Serializable {
         return "shopping-cart.xhtml";
     }
     
+    public String removeFromCart(Product product){
+        shoppingCart.removeFromCart(product);
+        return "shopping-cart.xhtml";
+    }
+    
     ////////////////////////////////////////
     // --------- SETTER METHODS --------- //
     ////////////////////////////////////////

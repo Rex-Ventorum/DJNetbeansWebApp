@@ -91,6 +91,7 @@ and open the template in the editor.
             <!-- CART ITEM LIST -->
             <ul class="list-group">
                 <ui:repeat var="cartItem" value="#{cartBean.shoppingCart.itemList}" varStatus="counter">
+                    <h:form>
                 <li class="list-group-item">
                     <span class="badge">#{cartItem.quantity}</span>
                     <span class="badge"><h:outputText value="#{cartItem.totalCost}">
@@ -99,8 +100,9 @@ and open the template in the editor.
                     <img class="media-object" height="75" width="75" alt="#{cartItem.product.productName} Image"
                          src="Images/#{cartItem.product.imageURL}"/>
                     <h4 class="media-heading">#{cartItem.product.productName}</h4>
-                    <input type="button" value="Remove"/>
+                    <h:commandButton type="submit" class="btn" action="#{cartBean.removeFromCart(cartItem.product)}" value="Remove"/>
                 </li>
+                    </h:form>
                 </ui:repeat>
             </ul>
         </div>
