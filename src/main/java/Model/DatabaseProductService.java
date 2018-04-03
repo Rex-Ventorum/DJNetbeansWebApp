@@ -31,9 +31,9 @@ public class DatabaseProductService implements ProductService {
     ////////////////////////////////////////
     @Override
     public Product findProduct(String productId) {
-        List<Product> results = getProductListQuery("select * from product where productid equals " + productId);
+        List<Product> results = getProductListQuery("select * from product where productid like '%" + productId + "%'");
         if(results.isEmpty()) return null;
-        else return results.get(1);
+        else return results.get(0);
     }
 
     @Override
