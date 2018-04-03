@@ -39,7 +39,7 @@ public class DatabaseProductService implements ProductService {
     @Override
     public List<Product> searchProducts(String searchParam) {
         String sql = "select * from product ";
-        sql += "where productname like " + searchParam.toLowerCase();
+        sql += "where Lower(productname) like Lower('%" + searchParam + "%')";
         List<Product> results = getProductListQuery(sql); 
         return results;
     }
