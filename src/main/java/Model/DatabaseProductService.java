@@ -38,7 +38,7 @@ public class DatabaseProductService implements ProductService {
 
     @Override
     public List<Product> searchProducts(String searchParam) {
-        String sql = "select * from products ";
+        String sql = "select * from product ";
         sql += "where productname like " + searchParam.toLowerCase();
         List<Product> results = getProductListQuery(sql); 
         return results;
@@ -52,7 +52,7 @@ public class DatabaseProductService implements ProductService {
     ////////////////////////////////////////
     @Override
     public List<Product> getAllProducts() {
-        List<Product> results = getProductListQuery("select * from products");
+        List<Product> results = getProductListQuery("select * from product");
         return results;
     }
 
@@ -87,7 +87,7 @@ public class DatabaseProductService implements ProductService {
             }
             
         }catch(SQLException | NamingException e){
-            //DO NOTHING FOR NOW THIS CLASS WILL HANDEL A NULL RETURN FROM METHOD
+            e.printStackTrace();
         }finally{
             if(rs != null) try {rs.close();} catch (SQLException ex) { }
             if(stmt != null) try { stmt.close(); } catch (SQLException ex) {}
