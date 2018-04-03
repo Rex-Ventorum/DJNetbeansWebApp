@@ -271,7 +271,7 @@ Image URL :: Leaf_5.png
 Short Description :: Who says money does not grow on trees?
 Long Description :: A Magical leaf that can transform into any form of human currency under $50.  
 ----- NEW RECORD -----
-Product Id :: L704
+Product Id :: L705
 Product Name :: Rainbow Leaf
 Unit Price :: 2.75
 Image URL :: Leaf_6.png

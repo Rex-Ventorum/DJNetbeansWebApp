@@ -1,5 +1,6 @@
 package Model.beans;
 
+import Model.DatabaseProductService;
 import Model.FileReaderProductService;
 import Model.Pojos.Product;
 import Model.ProductService;
@@ -26,14 +27,15 @@ public class ProductBean implements Serializable {
     // ---------- CONSTRUCTORS ---------- //
     ////////////////////////////////////////
     public ProductBean() {
-        ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
-        String path = servletContext.getRealPath("WEB-INF" + File.separatorChar + "WebProducts.txt");
-        File file = new File(path);
-        try {
-            productService = new FileReaderProductService(file);
-        } catch (IOException ex) {
-            productService = null;
-        }
+//        ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+//        String path = servletContext.getRealPath("WEB-INF" + File.separatorChar + "WebProducts.txt");
+//        File file = new File(path);
+//        try {
+//            productService = new FileReaderProductService(file);
+//        } catch (IOException ex) {
+//            productService = null;
+//        }
+        productService = new DatabaseProductService();
         if (productService != null) {
             productList = productService.getAllProducts();
             listHeader = "All Products";
