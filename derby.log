@@ -1,0 +1,31 @@
+Tue Apr 10 18:09:42 CDT 2018 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Tue Apr 10 18:09:42 CDT 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0162-b1d2-7307-ffffddb5b9a2 
+on database directory C:\Users\L117student\Documents\DJNetbeansWebApp\products with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Loaded from file:/C:/Program%20Files/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_141-b15
+user.dir=C:\Program Files\glassfish-4.1.1\javadb
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\L117student\Documents\DJNetbeansWebApp
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Apr 10 18:09:45 CDT 2018:
+Shutting down instance a816c00e-0162-b1d2-7307-ffffddb5b9a2 on database directory C:\Users\L117student\Documents\DJNetbeansWebApp\products with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Tue Apr 10 18:09:45 CDT 2018 Thread[DRDAConnThread_2,5,main] (DATABASE = products), (DRDAID = {2}), Database 'products' shutdown.
+----------------------------------------------------------------
+Tue Apr 10 18:10:08 CDT 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance ed8940a7-0162-b1d2-7307-ffffddb5b9a2 
+on database directory C:\Users\L117student\Documents\DJNetbeansWebApp\products with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Loaded from file:/C:/Program%20Files/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_141-b15
+user.dir=C:\Program Files\glassfish-4.1.1\javadb
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\L117student\Documents\DJNetbeansWebApp
+Database Class Loader started - derby.database.classpath=''
