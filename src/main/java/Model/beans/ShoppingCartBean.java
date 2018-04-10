@@ -2,14 +2,12 @@ package Model.beans;
 
 import Model.Pojos.Product;
 import Model.Pojos.ShoppingCart;
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
-import javax.faces.bean.ManagedProperty;
-import javax.swing.JOptionPane;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-@Named(value = "cartBean")
-@SessionScoped
+@Component(value = "cartBean")
+@Scope("session")
 public class ShoppingCartBean implements Serializable {
    
     private int qnt;

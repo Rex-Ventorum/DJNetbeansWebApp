@@ -1,20 +1,16 @@
 package Model.beans;
 
 import Model.DatabaseProductService;
-import Model.FileReaderProductService;
 import Model.Pojos.Product;
 import Model.ProductService;
-import java.io.File;
-import java.io.IOException;
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
+import Model.SpringProductService;
 import java.io.Serializable;
 import java.util.List;
-import javax.faces.context.FacesContext;
-import javax.servlet.ServletContext;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-@Named(value = "productBean")
-@SessionScoped
+@Component(value = "productBean")
+@Scope("session")
 public class ProductBean implements Serializable {
 
     private ProductService productService;
@@ -35,7 +31,7 @@ public class ProductBean implements Serializable {
 //        } catch (IOException ex) {
 //            productService = null;
 //        }
-        productService = new DatabaseProductService();
+        productService = new SpringProductService();
         if (productService != null) {
             productList = productService.getAllProducts();
             listHeader = "All Products";

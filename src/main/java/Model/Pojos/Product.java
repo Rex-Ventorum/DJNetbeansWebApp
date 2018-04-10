@@ -1,24 +1,43 @@
 package Model.Pojos;
 
 import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  *
  * @author Brandon
  */
-public final class Product{
+@Entity
+public class Product{
     
+    @Id
+    @GeneratedValue
     private String productId;
+    
+    @Column(name = "productname")
     private String productName;
+    
+    @Column(name = "unitprice")
     private double unitPrice;
+    
+    @Column(name = "imageurl")
     private String imageURL;
+    
+    @Column(name = "descriptionshort")
     private String descriptionShort;
+    
+    @Column(name = "descriptionlong")
     private String descriptionLong;
     
     
     ////////////////////////////////////////
     // ---------- CONSTRUCTORS ---------- //
     ////////////////////////////////////////
+    
+    public Product(){}
     
     public Product(String productId, String productName, double unitPrice, String imageURL, String discriptionShort, String discriptionLong) {
         this.productId = productId;
