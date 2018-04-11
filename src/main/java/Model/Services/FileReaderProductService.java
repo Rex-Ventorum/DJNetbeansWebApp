@@ -1,4 +1,4 @@
-package Model;
+package Model.Services;
 
 import Model.Pojos.Product;
 import Model.FileService.FileService;

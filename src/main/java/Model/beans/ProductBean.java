@@ -1,11 +1,12 @@
 package Model.beans;
 
-import Model.DatabaseProductService;
+import Model.Services.DatabaseProductService;
 import Model.Pojos.Product;
-import Model.ProductService;
-import Model.SpringProductService;
+import Model.Services.ProductService;
+import Model.Services.SpringProductService;
 import java.io.Serializable;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +23,11 @@ public class ProductBean implements Serializable {
     ////////////////////////////////////////
     // ---------- CONSTRUCTORS ---------- //
     ////////////////////////////////////////
+    @Autowired
+    public ProductBean(ProductService productService){
+        this.productService = productService;
+    }
+    
     public ProductBean() {
 //        ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
 //        String path = servletContext.getRealPath("WEB-INF" + File.separatorChar + "WebProducts.txt");

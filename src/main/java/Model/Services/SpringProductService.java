@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Model;
+package Model.Services;
 
 import Model.Pojos.IProductDAO;
 import Model.Pojos.Product;
