@@ -26,23 +26,25 @@ public class ProductBean implements Serializable {
     @Autowired
     public ProductBean(ProductService productService){
         this.productService = productService;
+        productList = productService.getAllProducts();
+        listHeader = "All Products";
     }
     
-    public ProductBean() {
-//        ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
-//        String path = servletContext.getRealPath("WEB-INF" + File.separatorChar + "WebProducts.txt");
-//        File file = new File(path);
-//        try {
-//            productService = new FileReaderProductService(file);
-//        } catch (IOException ex) {
-//            productService = null;
+//    public ProductBean() {
+////        ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+////        String path = servletContext.getRealPath("WEB-INF" + File.separatorChar + "WebProducts.txt");
+////        File file = new File(path);
+////        try {
+////            productService = new FileReaderProductService(file);
+////        } catch (IOException ex) {
+////            productService = null;
+////        }
+//        productService = new SpringProductService();
+//        if (productService != null) {
+//            productList = productService.getAllProducts();
+//            listHeader = "All Products";
 //        }
-        productService = new SpringProductService();
-        if (productService != null) {
-            productList = productService.getAllProducts();
-            listHeader = "All Products";
-        }
-    }
+//    }
 
     ////////////////////////////////////////
     // ------ INTERACTABLE METHODS ------ //

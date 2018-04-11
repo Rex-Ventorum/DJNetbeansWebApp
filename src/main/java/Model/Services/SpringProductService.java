@@ -27,6 +27,8 @@ public class SpringProductService implements ProductService{
     @Autowired
     private IProductDAO productDao;
     
+    public SpringProductService(){ }
+    
     @Override
     public Product findProduct(String productId) {
         return productDao.findOne(productId);
