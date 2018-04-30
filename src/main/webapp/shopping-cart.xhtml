@@ -11,7 +11,7 @@ and open the template in the editor.
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui = "http://java.sun.com/jsf/facelets">
-    <head>
+    <h:head>
         <title>Shopstuff Web Portal</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -21,7 +21,7 @@ and open the template in the editor.
         <link href="css/main.css" rel="stylesheet"/>
         <link href="css/shopping-cart.css" rel="stylesheet"/>
 
-    </head>
+    </h:head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -89,9 +89,9 @@ and open the template in the editor.
             </form>
 
             <!-- CART ITEM LIST -->
-            <ul class="list-group">
+            <ul class="list-group"><h:form id="cartForm">
                 <ui:repeat var="cartItem" value="#{cartBean.shoppingCart.itemList}" varStatus="counter">
-                    <h:form>
+                    
                 <li class="list-group-item">
                     <span class="badge">#{cartItem.quantity}</span>
                     <span class="badge"><h:outputText value="#{cartItem.totalCost}">
@@ -100,11 +100,10 @@ and open the template in the editor.
                     <img class="media-object" height="75" width="75" alt="#{cartItem.product.productName} Image"
                          src="Images/#{cartItem.product.imageURL}"/>
                     <h4 class="media-heading">#{cartItem.product.productName}</h4>
-                    <h:commandButton type="submit" class="btn" action="#{cartBean.removeFromCart(cartItem.product)}" value="Remove"/>
-                </li>
-                    </h:form>
+                    <p:commandButton update=":cartForm" action="#{cartBean.removeFromCart(cartItem.product)}" value="Remove"/>
+                </li>  
                 </ui:repeat>
-            </ul>
+            </h:form></ul>
         </div>
 
         <footer class="footer">
