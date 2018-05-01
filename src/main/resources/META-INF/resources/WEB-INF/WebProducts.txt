@@ -1,0 +1,350 @@
+Product Id :: B001
+Product Name :: Basic Potions 101
+Unit Price :: 35.99
+Image URL :: Book.png
+Short Description :: A beginner guide to potion making!
+Long Description :: Over 100 various potions and poisons for the every day warlock. Learn the basics to this wonderful craft from cursing your neighbors with the frog potion to making your crush fall in love you. This books is sure to delight and has step by step instructions for every potion. 
+----- NEW RECORD -----
+Product Id :: I001
+Product Name :: Pink Winged ButterFly
+Unit Price :: 2
+Image URL :: Butterfly_1.png
+Short Description ::  
+Long Description :: A pink winged butterfly commonly used for love potions.
+----- NEW RECORD -----
+Product Id :: I002
+Product Name :: Orange Monarch
+Unit Price :: 1.5
+Image URL :: Butterfly_2.png
+Short Description ::  
+Long Description :: A generic orange monarch butterfly.
+----- NEW RECORD -----
+Product Id :: I003
+Product Name :: Blue Winged ButterFly
+Unit Price :: 2
+Image URL :: Butterfly_3.png
+Short Description ::  
+Long Description :: A blue winged butterfly commonly used for flight and ability augmentation potions.
+----- NEW RECORD -----
+Product Id :: I004
+Product Name :: Fairy Winged Butterfly
+Unit Price :: 3.5
+Image URL :: Butterfly_4.png
+Short Description ::  
+Long Description :: Rare fairy winged butterfly used for advanced potions. Warning: Use by inexperanced warlocks may cause unpredictable affects. 
+----- NEW RECORD -----
+Product Id :: C150
+Product Name :: Basic Potion Brewing Cauldron
+Unit Price :: 59.75
+Image URL :: Cauldron.png
+Short Description :: A Standard Potion Brewing Cauldron with standard potion safety enchantments.
+Long Description :: A Fairly simple cauldron for brewing potions. Comes pre enchanted with Potion-Boost to increases potion potency, Poison-Lock to prevent poisonous fumes from leaking out, and Anti-Spill to prevent boil over or accidental knock over. Also comes with 30 day enchantment warranty.  
+----- NEW RECORD -----
+Product Id :: P100
+Product Name :: Elixir of Water Lungs
+Unit Price :: 12.75
+Image URL :: Elixir_Blue.png
+Short Description :: Minor Water Breathing Elixir
+Long Description :: Allows drinker to breath underwater for approximately 30 minutes. *Duration may vary slightly per user. 
+----- NEW RECORD -----
+Product Id :: P101
+Product Name :: Elixir of Flight
+Unit Price :: 14.75
+Image URL :: Elixir_Cyan.png
+Short Description :: Minor Flight Elixir
+Long Description :: Allows drinker to Fly for approximately 30 minutes. *Duration may vary slightly per user, use at own risk! 
+----- NEW RECORD -----
+Product Id :: P102
+Product Name :: Elixir of Never Ending Sleep
+Unit Price :: 19.99
+Image URL :: Elixir_Gray.png
+Short Description :: Also known as Liquid Sleeping Curse.
+Long Description :: Curses the user to continuous sleep as seen in Snow White. Can be applied to food or poured into drinks. Updated to not break due to "True Loves Kiss".
+----- NEW RECORD -----
+Product Id :: P103
+Product Name :: Elixir of The Frog
+Unit Price :: 10.00
+Image URL :: Elixir_Green.png
+Short Description :: Frog Transformation Elixir
+Long Description :: Transforms user into frog for 30 minutes. May cause partial transformation in rare cases. If transformation lasts longer than 30 minutes please seek medical help!
+----- NEW RECORD -----
+Product Id :: P104
+Product Name :: Elixir Of Orange Soda
+Unit Price :: 4.99
+Image URL :: Elixir_Orange.png
+Short Description :: Orange Soda
+Long Description :: This is simply orange soda in an elixir vile. Warlocks need drinks too!
+----- NEW RECORD -----
+Product Id :: P105
+Product Name :: Elixir Of Hate
+Unit Price :: 12.75
+Image URL :: Elixir_Purple.png
+Short Description :: Causes drinker to hate target. 
+Long Description :: Simply add essence of target to elixir and who ever drinks elixir will instantly hate target. Warning: Do not mix with Elixir of Love may cause disastrous effects and violent mood swings.
+----- NEW RECORD -----
+Product Id :: P106
+Product Name :: Elixir Of Love
+Unit Price :: 12.75
+Image URL :: Elixir_Red.png
+Short Description :: Causes drinker to love target. 
+Long Description :: Simply add essence of target to elixir and who ever drinks elixir will instantly fall in love with target. Warning: Do not mix with Elixir of Hate may cause disastrous effects and violent mood swings.
+----- NEW RECORD -----
+Product Id :: P107
+Product Name :: Elixir Of Gold
+Unit Price :: 30
+Image URL :: Elixir_Yellow.png
+Short Description :: Transforms Object into gold. Also known as Midus Touch.
+Long Description :: Apply to desired object and allow to dry overnight. Object will be turned to gold by morning. Effect should last for up to 5 days so sell to unsuspecting human quickly. 
+----- NEW RECORD -----
+Product Id :: E020
+Product Name :: Essance of Fae
+Unit Price :: 15
+Image URL :: Essance_1.png
+Short Description :: Also known as Fairy Essence
+Long Description :: 20ml of Fairy Essence for basic potion making. Shake vile before use and store in warm place. 
+----- NEW RECORD -----
+Product Id :: E030
+Product Name :: Essance of Troll
+Unit Price :: 15
+Image URL :: Essance_2.png
+Short Description ::  
+Long Description :: 20ml of Troll Essence for basic potion making. Shake vile before use and store in warm place. 
+----- NEW RECORD -----
+Product Id :: E040
+Product Name :: Essance of Smurf
+Unit Price :: 15
+Image URL :: Essance_3.png
+Short Description :: Gargamel Approved!
+Long Description :: 20ml of Smurf Essence for basic potion making. Shake vile before use and store in warm place. 
+----- NEW RECORD -----
+Product Id :: Y001
+Product Name :: Eye of Owl
+Unit Price :: 2
+Image URL :: Eye_Gray.png
+Short Description ::  
+Long Description :: A Single Eye of Owl.
+----- NEW RECORD -----
+Product Id :: Y002
+Product Name :: Eye of Jaguar
+Unit Price :: 2
+Image URL :: Eye_Black.png
+Short Description ::  
+Long Description :: A Single Eye of Jaguar.
+----- NEW RECORD -----
+Product Id :: Y003
+Product Name :: Eye of Elephant
+Unit Price :: 3.5
+Image URL :: Eye_Blue.png
+Short Description ::  
+Long Description :: A Single Eye of Elephant.
+----- NEW RECORD -----
+Product Id :: Y004
+Product Name :: Eye of Frog
+Unit Price :: 2
+Image URL :: Eye_Green.png
+Short Description ::  
+Long Description :: A Single Eye of Frog.
+----- NEW RECORD -----
+Product Id :: Y005
+Product Name :: Eye of Newt
+Unit Price :: 2
+Image URL :: Eye_Orange.png
+Short Description ::  
+Long Description :: A Single Eye of Newt.
+----- NEW RECORD -----
+Product Id :: Y007
+Product Name :: Eye of Bat
+Unit Price :: 2
+Image URL :: Eye_Purple.png
+Short Description ::  
+Long Description :: A Single Eye of Bat.
+----- NEW RECORD -----
+Product Id :: Y008
+Product Name :: Eye of Lion
+Unit Price :: 2
+Image URL :: Eye_Red.png
+Short Description ::  
+Long Description :: A Single Eye of Lion.
+----- NEW RECORD -----
+Product Id :: Y009
+Product Name :: Eye of Tiger
+Unit Price :: 2
+Image URL :: Eye_Yellow.png
+Short Description ::  
+Long Description :: A Single Eye of Tiger.
+----- NEW RECORD -----
+Product Id :: G510
+Product Name :: Gem of Sea
+Unit Price :: 7.99
+Image URL :: Gem_1.png
+Short Description :: Also Known As Heart of Ocean
+Long Description :: Can be used for potions that require "Essence of Sea" or "Essence of Ocean". Will Not work for "Essence of Lake".
+----- NEW RECORD -----
+Product Id :: G511
+Product Name :: Frozen Tear Gem
+Unit Price :: 7.99
+Image URL :: Gem_2.png
+Short Description :: Also known as Tear of Yedi
+Long Description :: Warning will cause frost burn if held for too long.  
+----- NEW RECORD -----
+Product Id :: G512
+Product Name :: Yellow Gem
+Unit Price :: 7.99
+Image URL :: Gem_3.png
+Short Description :: Also known as Honey Gem.
+Long Description :: Commonly mistaken for actual harden honey this is in fact a rock. DO NOT INGEST!
+----- NEW RECORD -----
+Product Id :: G513
+Product Name :: Love Gem
+Unit Price :: 7.99
+Image URL :: Gem_4.png
+Short Description :: Also known as Tears of Love
+Long Description :: Despite name this gem is actually known for it's hateful properties. commonly given as a gift by foolish spouse only to cause divorce.
+----- NEW RECORD -----
+Product Id :: G514
+Product Name :: Ruby Gem
+Unit Price :: 7.99
+Image URL :: Gem_5.png
+Short Description :: May or may not be actual Ruby
+Long Description :: It's named the ruby gem but is it actually ruby? Buy one and find out! 
+----- NEW RECORD -----
+Product Id :: G515
+Product Name :: Gem of The Third
+Unit Price :: 7.99
+Image URL :: Gem_6.png
+Short Description :: Also known as Protal Gem or Space Gem.
+Long Description :: It's named the ruby gem but is it actually ruby? Buy one and find out! 
+----- NEW RECORD -----
+Product Id :: G516
+Product Name :: Gem of Clarity
+Unit Price :: 7.99
+Image URL :: Gem_7.png
+Short Description :: Also known as Mind Gem
+Long Description :: A soothing gem that causes the holder to have calming thoughts. Great for antidepressants alternatives.
+----- NEW RECORD -----
+Product Id :: G517
+Product Name :: Gem of The Angel
+Unit Price :: 7.99
+Image URL :: Gem_8.png
+Short Description :: Also known Angelic Stone
+Long Description :: Can be used as substitute for "Essence of Angel" or "Angelic Grace". Store in well lighted area as effect will fade in darkness.  
+----- NEW RECORD -----
+Product Id :: G518
+Product Name :: Gem of The Demon
+Unit Price :: 7.99
+Image URL :: Gem_9.png
+Short Description :: Also known Demonic Stone
+Long Description :: Can be used as substitute for "Essence of Demon" or "Hell's Wrath". Store in dark area as effect will fade in light.  
+----- NEW RECORD -----
+Product Id :: L700
+Product Name :: Rust Leaf
+Unit Price :: .75
+Image URL :: Leaf_1.png
+Short Description :: This is a common leaf
+Long Description :: In reality this is just an ordinary red leaf. For reasons unknown many potion books ask for a non-existent "rust leaf" when any red leaf will do. 
+----- NEW RECORD -----
+Product Id :: L701
+Product Name :: Autumn Leaf
+Unit Price :: .75
+Image URL :: Leaf_2.png
+Short Description :: Also known as "Leaf of Fall"
+Long Description :: This is a common leaf preserved with an enchantment at the peek of turning.  
+----- NEW RECORD -----
+Product Id :: L702
+Product Name :: Blood Leaf
+Unit Price :: .75
+Image URL :: Leaf_3.png
+Short Description :: Also known as "Hate Leaf"
+Long Description :: A leaf from the rare Blood Tree. The leaf itself contains ventricle like that of a human with actual blood running threw them.   
+----- NEW RECORD -----
+Product Id :: L703
+Product Name :: Pointer Leaf
+Unit Price :: .75
+Image URL :: Leaf_4.png
+Short Description :: Also known as "Magnetic Leaf"
+Long Description :: A Magical leaf that always points EAST. Why not NORTH you ask? We don't know either.    
+----- NEW RECORD -----
+Product Id :: L704
+Product Name :: Money Leaf
+Unit Price :: 2.75
+Image URL :: Leaf_5.png
+Short Description :: Who says money does not grow on trees?
+Long Description :: A Magical leaf that can transform into any form of human currency under $50.  
+----- NEW RECORD -----
+Product Id :: L705
+Product Name :: Rainbow Leaf
+Unit Price :: 2.75
+Image URL :: Leaf_6.png
+Short Description :: Also known as "Leprechaun Leaf"
+Long Description :: A shimmering leaf of many colors. Grows only in the presence of Leprechaun groves. 
+----- NEW RECORD -----
+Product Id :: M230
+Product Name :: Death Moth
+Unit Price :: 2
+Image URL :: Moth_1.png
+Short Description :: Also known as "Life Moth"
+Long Description :: Like schrodinger's cat this moth is in an equal state of life and death. 
+----- NEW RECORD -----
+Product Id :: M231
+Product Name :: Painted Moth
+Unit Price :: 3.25
+Image URL :: Moth_2.png
+Short Description :: Hand painted by art gnomes. 
+Long Description :: These moths are first painted by gnomes and enchanted to life to help tend and bless the gardens they protect. 
+----- NEW RECORD -----
+Product Id :: M232
+Product Name :: Bumble Moth
+Unit Price :: 2
+Image URL :: Moth_3.png
+Short Description :: Half Bee / Half Moth 
+Long Description :: Created by a mad scientist simply because he could. This moth serves no purpose in the environment but for some reason has strong potion qualities. 
+----- NEW RECORD -----
+Product Id :: M233
+Product Name :: Common Moth
+Unit Price :: 1.5
+Image URL :: Moth_4.png
+Short Description :: A Common House Moth
+Long Description :: Sometimes you just need a common house moth and they too hard or too annoying to catch on your own. Don't worry we got you!
+----- NEW RECORD -----
+Product Id :: S001
+Product Name :: She Shell Sea Shell
+Unit Price :: 1
+Image URL :: Shell_1.png
+Short Description :: By The Sea Shore
+Long Description :: The shells she sells are surely seashells.So if she sells shells on the seashore, I'm sure she sells seashore shells.
+----- NEW RECORD -----
+Product Id :: S002
+Product Name :: Mermaid Shell
+Unit Price :: 1
+Image URL :: Shell_2.png
+Short Description :: Hand selected by Pacific Ocean mermaids
+Long Description :: A Shell commonly used by mermaids to cover their bodies when in presence of company. 
+----- NEW RECORD -----
+Product Id :: S003
+Product Name :: Common Shell
+Unit Price :: 1
+Image URL :: Shell_3.png
+Short Description :: A Generic Sea Shell
+Long Description :: Sometimes you just need a generic sea shell and they are either too hard to to annoying to collect on your own!
+----- NEW RECORD -----
+Product Id :: S004
+Product Name :: Cell Shell
+Unit Price :: 3.5
+Image URL :: Shell_4.png
+Short Description :: Crafted by mermaids of the Atlantic ocean
+Long Description :: An enchanted cell shell used by the mermaids to communicate long distance. Cell enchantment is intact however Standard messaging rates may still apply.
+----- NEW RECORD -----
+Product Id :: S005
+Product Name :: Goo Shell
+Unit Price :: 1.75
+Image URL :: Shell_5.png
+Short Description :: A soft sticky shell
+Long Description :: Created from an unknown creature this shell is actually gooye to the touch and used in many paste based potions.
+----- NEW RECORD -----
+Product Id :: S100
+Product Name :: Assorted Shell Collection
+Unit Price :: 19.99
+Image URL :: Shell_6.png
+Short Description :: A Collection of common potion shells.
+Long Description :: Comes with 25 various shells collected by mermaids across the world. The shells included are random but guaranteed to contain some from of magical quality.
+----- NEW RECORD -----

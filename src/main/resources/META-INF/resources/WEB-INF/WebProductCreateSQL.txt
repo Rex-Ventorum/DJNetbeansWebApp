@@ -1,0 +1,8 @@
+create table product (
+	productid varchar(20) primary key,
+	productname varchar(50),
+	unitprice double,
+	imageurl varchar(100),
+	descriptionshort varchar(500),
+	descriptionlong varchar(800)
+);

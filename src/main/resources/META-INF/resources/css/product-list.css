@@ -1,0 +1,18 @@
+.media{
+    margin: 3% 0% 3% 0%;
+    background:#DDDDDD;
+}
+
+.body-contnet > h2{
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.body-contnet > nav{
+    text-align: center;
+    margin: 1%;
+    width:100%;
+    bottom:0pt;
+    margin-right: auto;
+    margin-left: auto;
+}

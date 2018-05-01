@@ -1,0 +1,22 @@
+.body-contnet{
+    margin: auto 2%;
+    min-height:100%;
+}
+
+.form{
+    min-width: 100%;
+    display: block;
+    text-align: center;
+}
+.form-group .btn{
+    border-radius: 8px;
+    color: #000000;
+    background: -webkit-linear-gradient(-90deg, rgba(210,244,146,1) 0, rgba(124,188,10,1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(210,244,146,1) 0, rgba(124,188,10,1) 100%);
+    background: linear-gradient(180deg, rgba(210,244,146,1) 0, rgba(124,188,10,1) 100%);
+    background-repeat: no-repeat;
+}
+
+.form-group .btn:hover{
+    box-shadow:inset 0px 0px 9px #0000ff;
+}
