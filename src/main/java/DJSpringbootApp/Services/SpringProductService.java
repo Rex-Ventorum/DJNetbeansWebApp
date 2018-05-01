@@ -31,7 +31,7 @@ public class SpringProductService implements ProductService{
     
     @Override
     public Product findProduct(String productId) {
-        return productDao.findOne(productId);
+        return productDao.getOne(productId);
     }
 
     @Override

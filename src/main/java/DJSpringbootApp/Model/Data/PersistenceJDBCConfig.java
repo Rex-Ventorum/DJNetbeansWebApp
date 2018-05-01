@@ -10,24 +10,20 @@ import java.util.Properties;
 import javax.naming.NamingException;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.instrument.classloading.ReflectiveLoadTimeWeaver;
-import org.springframework.jndi.JndiTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-/**
- *
- * @author L117student
- */
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "Model")
+@EnableJpaRepositories(basePackages = "DJSpringbootApp")
 public class PersistenceJDBCConfig {
 
 	@Bean
@@ -37,16 +33,15 @@ public class PersistenceJDBCConfig {
 			= new LocalContainerEntityManagerFactoryBean();
 
 		emf.setDataSource(dataSource());
-		emf.setJpaVendorAdapter(new EclipseLinkJpaVendorAdapter());
-		// Following required to avoid looking for persistence.xml
-		emf.setPackagesToScan("Model");
-		emf.setPersistenceUnitName("products-pu");
-		emf.setLoadTimeWeaver(new ReflectiveLoadTimeWeaver());
+		emf.setPackagesToScan("DJSpringbootApp");
+
+		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+      		emf.setJpaVendorAdapter(vendorAdapter);
 
 		Properties properties = new Properties();
-		properties.setProperty("eclipselink.logging.level", "FINE");
-		properties.setProperty("eclipselink.logging.level.sql", "FINE");
-		properties.setProperty("eclipselink.logging.parameters", "true");
+		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.DerbyDialect");
+		properties.setProperty("hibernate.show_sql", "true");
+
 		emf.setJpaProperties(properties);
 		emf.afterPropertiesSet();
 
@@ -55,8 +50,12 @@ public class PersistenceJDBCConfig {
 
 	@Bean
 	public DataSource dataSource() throws NamingException {
-		return (DataSource) new JndiTemplate()
-			.lookup("java:comp/env/jdbc/myProducts");
+		BasicDataSource datasource = new BasicDataSource();
+		datasource.setDriverClassName("org.apache.derby.jdbc.ClientDriver");
+		datasource.setUrl("jdbc:derby://localhost:1527/SpringbootDatabase");
+		datasource.setUsername("APP");
+		datasource.setPassword("APP");
+		return datasource;
 	}
 
 	@Bean
