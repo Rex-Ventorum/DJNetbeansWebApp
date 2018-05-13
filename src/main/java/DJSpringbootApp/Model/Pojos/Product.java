@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  *
@@ -14,7 +15,7 @@ import javax.persistence.Id;
 public class Product{
     
     @Id
-    @GeneratedValue
+    @Column(name = "productId")
     private String productId;
     
     @Column(name = "productname")
@@ -69,7 +70,7 @@ public class Product{
     ////////////////////////////////////////
 
     public void setProductId(String productId) {
-        if(imageURL == null || imageURL.isEmpty()) throw new IllegalArgumentException("Product Id May Not Be Null Or Empty");
+        if(productId == null || productId.isEmpty()) throw new IllegalArgumentException("Product Id May Not Be Null Or Empty");
         this.productId = productId;
     }
     

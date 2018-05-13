@@ -47,4 +47,19 @@ public class SpringProductService implements ProductService{
     public List<Product> getAllProducts() {
        return productDao.findAll();
     }
+    
+    @Override
+    public Product createProduct(Product product){
+        return productDao.save(product);
+    }
+    
+    @Override
+    public Product updateProduct(Product product){
+        return productDao.save(product);
+    }
+    
+    @Override
+    public void deleteProduct(String id){
+        productDao.deleteById(id);
+    }
 }
